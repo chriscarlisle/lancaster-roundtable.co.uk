@@ -485,11 +485,13 @@ form button:hover {
 
 /* Left side: Form container */
 .form-section {
+    max-width: 100%;
     flex: 1 1 45%;
     background-color: #111111; /* Light background */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 8px 30px rgba(255, 159, 0, 0.96);
+    margin: 0 auto;
 }
 
 /* Icons above the form */
