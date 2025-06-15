@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+html {
+    font-size: clamp(14px, 2vw, 18px);
+}
+
 body {
     margin: 0;
     font-family: 'Eurostile_Extended_Bold', sans-serif;
@@ -66,33 +70,33 @@ nav a:hover {
 }
 
 .container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-    margin-bottom: 40px;
+    padding: 2rem 1rem;
+    max-width: 100%;
+    margin: auto auto 2.5rem auto;
 }
 
 section {
-    margin-bottom: 60px;
+    margin-bottom: 4rem;
 }
 
 h1, h2, h3 {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1rem;
     color: #FFFFFF;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .highlight {
     background-color: #000000;
     color: #FFFFFF;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    margin-top: 1.25rem;
 }
 
 .callout {
-    font-size: 24px;
-    margin: 15px 0;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    margin: 1rem 0;
     text-align: center;
     color: #000000;
 }
@@ -100,8 +104,8 @@ h1, h2, h3 {
 footer {
     text-align: center;
     background-color: #fbaf33;
-    padding: 20px;
-    font-size: 14px;
+    padding: 1.25rem;
+    font-size: 0.875rem;
     color: #FFFFFF;
 }
 
@@ -113,7 +117,7 @@ footer {
 
 .carousel-track {
     display: flex;
-    gap: 20px;
+    gap: 1rem;
     animation: scroll-left 30s linear infinite;
     align-items: center;
 }
@@ -124,11 +128,11 @@ footer {
 
 .carousel-item {
     position: relative;
-    width: 200px;
+    flex: 0 0 auto;
+    width: clamp(150px, 20vw, 200px);
     aspect-ratio: 16 / 9;
-    flex-shrink: 0;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0.5rem;
 }
 
 .carousel-item img {
@@ -194,20 +198,19 @@ form button:hover {
 
 .logo-strip {
     display: flex;
-    justify-content: center; /* centers items horizontally */
-    align-items: center;     /* centers items vertically */
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
     flex-wrap: wrap;
     max-width: 100%;
-    margin: 30px auto;       /* auto left/right margins center the whole strip */
+    margin: 2rem auto;
 }
 
 .logo {
-    max-width: 100%;
+    flex: 1 1 clamp(60px, 10vw, 120px);
     height: auto;
     object-fit: contain;
-    flex: 1 1 80px;
-    max-height: 80px;
+    max-height: clamp(60px, 10vw, 100px);
     transition: transform 0.3s ease;
 }
 
@@ -238,7 +241,7 @@ form button:hover {
 .two-column {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.25rem;
     justify-content: center;
     align-items: center;
 }
@@ -246,7 +249,7 @@ form button:hover {
 .two-column > div,
 .two-column > img {
     flex: 1 1 300px;
-    max-width: 500px;
+    max-width: 100%;
 }
 
 .group-photo {
@@ -257,34 +260,33 @@ form button:hover {
 .member-photo {
     width: 100%;
     max-width: 150px;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 0.625rem;
 }
 
 /* Member grid with 4 cards per row */
 .member-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 2rem;
     justify-items: center;
 }
 
 /* Member card styling */
 .member-card {
-    perspective: 1000px;
     width: 100%;
     max-width: 290px;
-    height: 390px;
+    aspect-ratio: 3 / 4;
 }
 
 .card-inner {
-    position: relative;
     width: 100%;
-    height: 390px;
+    aspect-ratio: 3 / 4;
+    position: relative;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    transform-origin: center center;
-    box-sizing: border-box;
+    transform-origin: center;
 }
 
 .member-card.flipped .card-inner {
@@ -304,21 +306,18 @@ form button:hover {
 .card-front,
 .card-back {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    background-color: #131212;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(251, 175, 51, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 1rem;
     box-sizing: border-box;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+    background-color: #131212;
 }
 
 .card-front {
@@ -329,21 +328,18 @@ form button:hover {
 }
 
 .card-back {
-    font-size: 12px; /* or try 14px */
-    line-height: 1.4;
     transform: rotateY(180deg);
-    color: #ffffff;
+    color: #fff;
+    font-size: 0.85rem;
     text-align: center;
-    opacity: 0;
-    visibility: hidden;
 }
 
 .flip-button {
-    margin-top: 15px;
+    margin-top: 1rem;
     background: none;
     border: none;
     color: #fbaf33;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -357,22 +353,22 @@ form button:hover {
 .member-info {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-bottom: 10px;
+    gap: 0.25rem;
+    margin-bottom: 0.625rem;
 }
 
 .member-name {
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
     font-weight: bold;
     margin: 0;
 }
 
 .member-age,
 .member-role {
-    font-size: 1rem;
-    margin: 0;
+    font-size: clamp(0.875rem, 1vw, 1rem);
     font-style: italic;
     color: #fbaf33;
+    margin: 0;
 }
 
 /* Member photo */
@@ -388,7 +384,7 @@ form button:hover {
 .member-description p {
     line-height: 1.5;
     margin: 0;
-    max-width: 300px;
+    max-width: 100%;
 }
 
 /* Responsive for smaller screens */
@@ -409,16 +405,14 @@ form button:hover {
     margin: 0 auto;
     max-width: 100%;
     height: auto;
-    width: 160px; /* or whatever size you want */
 }
 
 .video {
     display: block;
-    margin: 0 auto;
+    margin: 1.5rem auto 0;
     width: 100%;
     max-width: 600px;
     height: auto;
-    margin-top: 25px;
 }
 
 #values-grid {
@@ -594,4 +588,10 @@ form button:hover {
 .rose-background > * {
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 15px;
+    }
 }
