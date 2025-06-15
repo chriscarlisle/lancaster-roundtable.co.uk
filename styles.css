@@ -176,9 +176,10 @@ form textarea {
     border-radius: 4px;
     background-color: #000000;
     color: #FFFFFF;
-    width: 80%;
+    width: 100%;
     font-size: 1rem;
     box-sizing: border-box;
+    margin-bottom: 1rem;
 }
 
 form button {
