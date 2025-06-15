@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Lancaster Round Table</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .form-video {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="images/Logos/HeaderBanner.png" alt="Lancaster Round Table Header Image" class="header-photo">
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="tablers.html">Tablers</a>
+    <a href="area34.html">Lancashire Round Tables</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <section id="contact">
+
+    <!-- Flex Container for Form and Facebook -->
+    <div class="contact-layout">
+
+      <!-- Contact Form and Video -->
+      <div class="form-section">
+        <div class="contact-icons">
+          <p>
+            <a href="mailto:Lancaster@roundtable.org.uk">
+              <i class="fas fa-envelope"></i> Lancaster@roundtable.org.uk
+            </a>
+          </p>
+          <p>
+            <a href="https://wa.me/447587673518" target="_blank">
+              <i class="fab fa-whatsapp"></i> 07587 673518
+            </a>
+          </p>
+        </div>
+
+        <form action="#" method="post">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Your Email *</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Video under the form -->
+        <video class="form-video" src="./Videos/domore-Gif-2024.mp4" autoplay muted controls loop></video>
+      </div>
+
+      <!-- Facebook Feed in iPhone-style container -->
+      <div class="iphone-frame">
+        <div class="iphone-notch"></div>
+        <div class="iphone-screen">
+          <iframe
+                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLancaster160&tabs=timeline&width=320&height=580&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+                  width="100%"
+                  height="100%"
+                  style="border:none; overflow:hidden; border-radius: 20px;"
+                  scrolling="no"
+                  frameborder="0"
+                  allowfullscreen="true"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2023 Lancaster Round Table. All rights reserved.</p>
+  <p>Website by Lancaster Webmaster</p>
+</footer>
+
+</body>
+</html>
