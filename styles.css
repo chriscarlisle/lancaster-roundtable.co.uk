@@ -5,10 +5,6 @@
     font-style: normal;
 }
 
-html {
-    font-size: clamp(14px, 2vw, 18px);
-}
-
 body {
     margin: 0;
     font-family: 'Eurostile_Extended_Bold', sans-serif;
@@ -384,7 +380,7 @@ form button:hover {
 
 /* Description paragraph */
 .member-description p {
-    font-size: 0.65rem;
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
     line-height: 1.4;
     margin: 0;
     max-width: 100%;
@@ -485,7 +481,7 @@ form button:hover {
 
 /* Left side: Form container */
 .form-section {
-    max-width: 100%;
+    max-width: 40%;
     flex: 1 1 45%;
     background-color: #111111; /* Light background */
     padding: 30px;
