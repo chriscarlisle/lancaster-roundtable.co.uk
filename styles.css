@@ -46,7 +46,7 @@ nav a:hover {
     color: #000000;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     header {
         flex-direction: column;
         padding: 15px;
@@ -57,15 +57,17 @@ nav a:hover {
     }
 
     nav {
-        margin-top: 15px;
-        width: 100%;
+        flex-wrap: wrap;       /* Allow nav items to wrap */
         justify-content: center;
-        border-top: 1px solid #FFFFFF;
-        padding-top: 15px;
+        padding: 0.5rem 0;
     }
 
     nav a {
-        margin: 0 10px;
+        flex: 1 1 100%;        /* Make each link take full width */
+        text-align: center;    /* Center text */
+        margin: 5px 0;         /* Vertical spacing */
+        padding: 0.75rem 0;
+        box-sizing: border-box;
     }
 }
 
@@ -382,7 +384,8 @@ form button:hover {
 
 /* Description paragraph */
 .member-description p {
-    line-height: 1.5;
+    font-size: 0.65rem;
+    line-height: 1.4;
     margin: 0;
     max-width: 100%;
 }
