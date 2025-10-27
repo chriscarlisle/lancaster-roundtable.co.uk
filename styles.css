@@ -607,3 +607,59 @@ form button:hover {
         padding: 0 15px;
     }
 }
+
+/* ---------- Gradient Overlay ---------- */
+.gradient-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 100%);
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+/* ---------- Explosion Items ---------- */
+@keyframes explode {
+    0% {
+        transform: translate(-50%, -50%) translate(0,0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) translate(var(--x), var(--y)) rotate(var(--rotate));
+        opacity: 0;
+    }
+}
+
+.snowflake, .sweet, .egg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    animation-fill-mode: forwards;
+}
+
+.season-message {
+    position: absolute;      /* follow the explosion container */
+    top: 50%;                /* same origin as explosion */
+    left: 50%;
+    transform: translate(-50%, -50%); /* center exactly */
+    z-index: 10001;          /* higher than explosions */
+    text-align: center;
+    display: block;
+    max-width: 80%;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+
