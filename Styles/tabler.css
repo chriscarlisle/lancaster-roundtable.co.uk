@@ -1,0 +1,81 @@
+/* ===========================
+   TEAM CARDS
+   =========================== */
+.team {
+    background-color: var(--bg-team);
+    padding-block: 4rem;
+}
+
+.team-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    margin: 2rem auto 0; /* centers the grid */
+    max-width: 1200px;   /* adjust to taste */
+    padding-inline: 1rem; /* small side padding */
+}
+
+
+.team-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--table-grey);
+    box-shadow: 0 5px 15px rgb(38, 38, 38);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Hide image and info on hover, show overlay text */
+.team-card:hover .card-image,
+.team-card:hover .card-info {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-image img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 1rem;
+    background-color: var(--golden-yellow);
+    color: var(--black);
+    transition: opacity 0.3s ease;
+    text-align: center; /* ⭐ center name + role */
+}
+
+.card-info h3, .card-info p { margin: 0; }
+
+.card-hover {
+    position: absolute;
+    inset: 0;
+    background: rgba(29, 29, 26, 0.9);
+    color: var(--white);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+    font-size: 0.9rem; /* smaller text */
+    line-height: 1.1;
+}
+
+.team-card:hover .card-hover {
+    opacity: 1;
+    z-index: 10; /* ensures overlay text sits above hidden content */
+}
+
+/* Optional: smaller headings in overlay */
+.card-hover h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}

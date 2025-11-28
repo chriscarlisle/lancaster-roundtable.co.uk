@@ -1,271 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tablers | Lancaster Round Table</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lancaster Round Table | Tablers</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="Styles/base.css">   <!-- fonts & colors -->
+    <link rel="stylesheet" href="Styles/layout.css"> <!-- header/nav & footer -->
+    <link rel="stylesheet" href="Styles/tabler.css"> <!-- page styles -->
 </head>
 <body>
 
-<header>
-  <img src="images/Logos/HeaderBanner.png" alt="Lancaster Round Table Header Image" class="header-photo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="tablers.html">Tablers</a>
-    <a href="area34.html">Lancashire Round Tables</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<!-- HEADER / NAV -->
+<header class="site-header">
+    <div class="nav-container container">
+        <a href="tablers.html" class="logo-link">
+            <img src="images/logos/Header.png" alt="Site Logo" class="logo">
+        </a>
+
+        <!-- Hamburger Toggle -->
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="main-nav" id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="santas-sleigh.html">Santa's Sleigh</a>
+            <a href="about.html">About</a>
+            <a href="area34.html">Area 34</a>
+            <a href="tablers.html">Tablers</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
 </header>
 
-<div class="container">
-  <section id="members">
-    <h2>Meet the Tablers</h2>
-    <div class="member-grid">
+<!-- MEET THE TABLERS -->
+<section class="team container">
+    <h1 class="center">Meet the Tablers</h1>
+    <div class="team-grid">
 
-      <!-- Flippable Member Card Example -->
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Mark</strong></p>
-              <p class="member-role">Chairman</p>
+        <!-- Mark -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Mark.png" alt="Mark">
             </div>
-            <img src="./images/Headshots/Mark.png" alt="Mark" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>When I moved to the Lancaster area a couple of years ago I felt alone and wanted to step out of my comfort zone, make some new friends and do more with my free time. Round table has helped me grow as a person and has given me fulfilment in my life. As a member of RT I also get the opportunity to give back to local the community.</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Ethan G</strong></p>
-              <p class="member-role">Vice Chair</p>
+            <div class="card-info">
+                <h3>Mark</h3>
+                <p>Chairman</p>
             </div>
-            <img src="./images/Headshots/EthanG.png" alt="Ethan G" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>-</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Blake</strong></p>
-              <p class="member-role">Immediate Past Chair</p>
+            <div class="card-hover">
+                <p>When I moved to the Lancaster area a couple of years ago I felt alone and wanted to step out of my comfort zone, make some new friends and do more with my free time. Round Table has helped me grow as a person and has given me fulfilment in my life. As a member of RT I also get the opportunity to give back to the local community.</p>
             </div>
-            <img src="./images/Headshots/Blake.png" alt="Lewis" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>I have been a Tabler for about 10 years. Table has opened so many doors for me to experience things that I would have never done otherwise. Twice a month I get to go out, be myself, meet up with a great group of mates and do something a bit different. As an added bonus, over the years I’ve helped to raise and donate tens of thousands of pounds to local charities and good causes.</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
         </div>
-      </div>
 
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Lewis</strong></p>
-              <p class="member-role">President</p>
+        <!-- Ethan G -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/EthanG.png" alt="Ethan G">
             </div>
-            <img src="./images/Headshots/Lewis.png" alt="Ethan C" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>I first joined over 20 years ago, and it quickly became a valuable source of friendship and a vibrant social outlet. Through Round Table, I’ve had the opportunity to travel to India, South Africa, Germany, France, and the Netherlands. My experiences have ranged from helping to run a charity beer festival to trying axe throwing, archery and more!</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Luke</strong></p>
-              <p class="member-role">Social Media</p>
+            <div class="card-info">
+                <h3>Ethan G</h3>
+                <p>Vice Chair</p>
             </div>
-            <img src="./images/Headshots/Luke.png" alt="Luke" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>Round Table has completely transformed my life. I went from having no social circle to being surrounded by great friends and community. I'm now more active, constantly socialising and meeting new people, regularly getting involved in exciting events, making unforgettable memories and genuinely having the time of my life. I also serve as Area 34 Chairman.</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Ethan C</strong></p>
-              <p class="member-role">Webmaster</p>
+            <div class="card-hover">
+                <p>Ethan is a big fan of fish pies!</p>
             </div>
-            <img src="./images/Headshots/EthanC.png" alt="Ethan C" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>I joined to meet new people, take on new challenges, and get involved in projects that make a real difference. Round Table has given me a sense of purpose, lasting friendships, and plenty of unforgettable memories. I'm proud to be part of a group that gives back to the community and has a great time doing it.</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
         </div>
-      </div>
 
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Chris</strong></p>
-              <p class="member-role">Secretary</p>
+        <!-- Blake -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Blake.png" alt="Blake">
             </div>
-            <img src="./images/Headshots/Chris.png" alt="Chris" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>I'm a data scientist living in the Lancaster/Morecambe area.. I moved up to Lancaster from Wales about 8 years ago, originally for 4 years, but I loved the place so much I've stayed a bit longer! Round Table gives me the opportunity to connect with my community and give something back to them.</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Sal</strong></p>
-              <p class="member-role">Community Officer</p>
+            <div class="card-info">
+                <h3>Blake</h3>
+                <p>Immediate Past Chair</p>
             </div>
-            <img src="./images/Headshots/Sal.png" alt="Sal" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>My name is Salvetore, Sal for short ironically I am only 5ft 6 I have been part of table for the best part of 10 years minus a couple of years when I worked away from lancaster.</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Jason</strong></p>
-              <p class="member-role">Tabler</p>
+            <div class="card-hover">
+                <p>I have been a Tabler for about 10 years. Table has opened so many doors for me to experience things that I would have never done otherwise. Twice a month I get to go out, be myself, meet up with a great group of mates and do something a bit different. As an added bonus, over the years I’ve helped to raise and donate tens of thousands of pounds to local charities and good causes.</p>
             </div>
-            <img src="./images/Headshots/Jason.png" alt="Jason" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>Lancaster-born and a local, talented chef, I’ve found Lancaster Round Table to be amazing. It’s massively pushed me out of my comfort zone, helped me connect with people I wouldn’t normally talk to, and I love it for that. I’ve gained lifelong friends and grown even more confident in myself.</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
         </div>
-      </div>
 
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Mitch</strong></p>
-              <p class="member-role">Tabler</p>
+        <!-- Lewis -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Lewis.png" alt="Lewis">
             </div>
-            <img src="./images/Headshots/Mitch.png" alt="Mitch" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>I'm a maintenance engineer for a paper mill seen advertisements for RT online thought that looks interesting and a great way to get out the house and have some fun and make some new friends along the way. I do have a pretty good social life anyway but this has opened up to so many more possibilities.</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Theo</strong></p>
-              <p class="member-role">Tabler</p>
+            <div class="card-info">
+                <h3>Lewis</h3>
+                <p>President</p>
             </div>
-            <img src="./images/Headshots/Theo.png" alt="Theo" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>-</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Iain</strong></p>
-              <p class="member-role">Tabler</p>
+            <div class="card-hover">
+                <p>I first joined over 20 years ago, and it quickly became a valuable source of friendship and a vibrant social outlet. Through Round Table, I’ve had the opportunity to travel to India, South Africa, Germany, France, and the Netherlands. My experiences have ranged from helping to run a charity beer festival to trying axe throwing, archery and more!</p>
             </div>
-            <img src="./images/Headshots/Ian.png" alt="Ian" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>-</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
         </div>
-      </div>
 
-      <div class="member-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="member-info">
-              <p class="member-name"><strong>Markus</strong></p>
-              <p class="member-role">Tabler</p>
+        <!-- Luke -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Luke.png" alt="Luke">
             </div>
-            <img src="./images/Headshots/Markus.png" alt="Markus" class="member-photo" />
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
-          <div class="card-back">
-            <p>Living in Lancaster & been in RT since beginning of 2025 and I’m working as a Sales Manager. RT has made it very easy for me to socialise and make friends.</p>
-            <button class="flip-button"><i class="fas fa-rotate"></i></button>
-          </div>
+            <div class="card-info">
+                <h3>Luke</h3>
+                <p>Social Media</p>
+            </div>
+            <div class="card-hover">
+                <p>Round Table has completely transformed my life. I went from having no social circle to being surrounded by great friends and community. I'm now more active, constantly socialising and meeting new people, regularly getting involved in exciting events, making unforgettable memories and genuinely having the time of my life. I also serve as Area 34 Chairman.</p>
+            </div>
         </div>
-      </div>
 
-      <!-- Add more cards below using the same structure -->
+        <!-- Ethan C -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/EthanC.png" alt="Ethan C">
+            </div>
+            <div class="card-info">
+                <h3>Ethan C</h3>
+                <p>Webmaster</p>
+            </div>
+            <div class="card-hover">
+                <p>I joined to meet new people after moving to the area and to get out of the house by getting up to new activities and experiences. Since joining Round Table, I've made new friends and enjoyed plenty of memorable moments. I'm proud to be part of a group that gives back to the community while having a great time along the way.</p>
+            </div>
+        </div>
 
+        <!-- Chris -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Chris.png" alt="Chris">
+            </div>
+            <div class="card-info">
+                <h3>Chris</h3>
+                <p>Secretary</p>
+            </div>
+            <div class="card-hover">
+                <p>I'm a data scientist living in the Lancaster/Morecambe area. I moved up to Lancaster from Wales about 8 years ago. Round Table gives me the opportunity to connect with my community and give something back to them.</p>
+            </div>
+        </div>
+
+        <!-- Sal -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Sal.png" alt="Sal">
+            </div>
+            <div class="card-info">
+                <h3>Sal</h3>
+                <p>Community Officer</p>
+            </div>
+            <div class="card-hover">
+                <p>My name is Salvetore, Sal for short. I have been part of Table for the best part of 10 years, minus a couple of years when I worked away from Lancaster.</p>
+            </div>
+        </div>
+
+        <!-- Jason -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Jason.png" alt="Jason">
+            </div>
+            <div class="card-info">
+                <h3>Jason</h3>
+                <p>Tabler</p>
+            </div>
+            <div class="card-hover">
+                <p>Lancaster-born and a local, talented chef, I’ve found Lancaster Round Table to be amazing. It’s massively pushed me out of my comfort zone, helped me connect with people I wouldn’t normally talk to, and I love it for that. I’ve gained lifelong friends and grown even more confident in myself.</p>
+            </div>
+        </div>
+
+        <!-- Mitch -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Mitch.png" alt="Mitch">
+            </div>
+            <div class="card-info">
+                <h3>Mitch</h3>
+                <p>Tabler</p>
+            </div>
+            <div class="card-hover">
+                <p>I'm a maintenance engineer for a paper mill. I joined RT after seeing an advertisement online; it looked like a great way to get out of the house and make new friends along the way. It has opened up many more possibilities for socialising and fun.</p>
+            </div>
+        </div>
+
+        <!-- Theo -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Theo.png" alt="Theo">
+            </div>
+            <div class="card-info">
+                <h3>Theo</h3>
+                <p>Tabler</p>
+            </div>
+            <div class="card-hover">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Iain -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Iain.png" alt="Iain">
+            </div>
+            <div class="card-info">
+                <h3>Iain</h3>
+                <p>Tabler</p>
+            </div>
+            <div class="card-hover">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Markus -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Markus.png" alt="Markus">
+            </div>
+            <div class="card-info">
+                <h3>Markus</h3>
+                <p>Tabler</p>
+            </div>
+            <div class="card-hover">
+                <p>Living in Lancaster & been in RT since beginning of 2025 and I’m working as a Sales Manager. RT has made it very easy for me to socialise and make friends.</p>
+            </div>
+        </div>
+
+        <!-- Simon -->
+        <div class="team-card">
+            <div class="card-image">
+                <img src="images/headshots/Simon.png" alt="Simon">
+            </div>
+            <div class="card-info">
+                <h3>Simon</h3>
+                <p>Tabler</p>
+            </div>
+            <div class="card-hover">
+                <p>I'm a new member to Round Table, encouraged to join by a friend currently in XRT. From my first meeting I've been made to feel welcome among a great group of guys and had the chance to do some activities I wouldn't normally do while experiencing the brilliant community spirit I was told to expect.</p>
+            </div>
+        </div>
     </div>
-  </section>
-</div>
+</section>
 
+<!-- FOOTER -->
 <footer>
-  <p>&copy; 2023 Lancaster Round Table. All rights reserved.</p>
-  <p>Website by Lancaster Webmaster</p>
+    <div class="footer-content container">
+        <div class="footer-left">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@lancasterroundtable.co.uk">info@lancasterroundtable.co.uk</a></p>
+            <p>Phone: <a href="tel:+447587673518">07587 673518</a></p>
+        </div>
+        <div class="footer-right">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Lancaster160/?locale=en_GB">
+                    <img src="images/icons/facebook-logo.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/lancasterroundtable/">
+                    <img src="images/icons/instagram-logo.svg" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Lancaster Round Table. All rights reserved.<br>
+            Website by <a href="#">Lancaster Webmaster</a>
+        </p>
+    </div>
 </footer>
 
-<!-- JavaScript for flipping cards -->
+<!-- JS for mobile nav toggle -->
 <script>
-  document.querySelectorAll('.flip-button').forEach(button => {
-    button.addEventListener('click', () => {
-      const card = button.closest('.member-card');
-      card.classList.toggle('flipped');
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+
+    navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
     });
-  });
 </script>
 
 </body>

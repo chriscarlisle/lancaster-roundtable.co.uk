@@ -1,0 +1,115 @@
+/* Promo video section */
+.promo-video {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--black); /* fallback background */
+}
+
+/* Full-width responsive video */
+.full-width-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Fade overlay at bottom */
+.video-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* adjust fade height as needed */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--black) 100%);
+    pointer-events: none; /* so overlay doesn't block clicks */
+}
+
+/* INTRO SECTION */
+.intro {
+    background-color: var(--black);
+    padding: 4rem 1rem;
+    color: var(--white);
+    text-align: center;
+}
+
+/* ===========================
+   HOMEPAGE PHOTO GRID - AREA STYLE
+   =========================== */
+
+.homepage-photo-grid {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.grid-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ffffff; /* festive red accent */
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.grid-wrapper img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(251, 175, 51, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-wrapper img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(251, 175, 51, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.8rem;
+    }
+}
+
+/* HOMEPAGE PROMO VIDEO - FULL CENTER FIX */
+.homepage-promo-video {
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    margin: 3rem 0;
+    padding: 0 1rem;           /* small side padding for very narrow screens */
+}
+
+.homepage-promo-video .promo-video-element {
+    width: 100%;
+    max-width: 900px;          /* optional max width for large screens */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .homepage-promo-video {
+        margin: 2rem 0;
+    }
+
+    .homepage-promo-video .promo-video-element {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;    /* slightly smaller radius for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .homepage-promo-video .promo-video-element {
+        height: auto;
+        width: 100%;
+    }
+}

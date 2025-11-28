@@ -1,0 +1,119 @@
+/* ===========================
+   INTRO SECTION
+   =========================== */
+
+.intro {
+    position: relative;
+    overflow: hidden;
+    padding-block: 4rem;
+}
+
+.intro-wrapper {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+/* Background logo */
+.area-logo-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.15;
+}
+
+.area-logo-bg img {
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+}
+
+/* ===========================
+   CLUB LOGOS
+   =========================== */
+
+.area-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.area-logos img {
+    height: 120px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.area-logos a:hover img {
+    transform: scale(1.1);
+}
+
+/* ===========================
+   AREA PROGRAMME GRID
+   =========================== */
+
+.promo-video {
+    padding-block: 3rem;
+}
+
+.subheading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.area-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.area-photos-grid img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(251, 175, 51, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.area-photos-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .area-photos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.8rem;
+    }
+}
+
+/* ===========================
+   MOBILE FIXES
+   =========================== */
+
+@media (max-width: 768px) {
+    .area-logos img {
+        height: 90px;
+    }
+
+    .intro-text {
+        padding-inline: 1rem;
+    }
+}

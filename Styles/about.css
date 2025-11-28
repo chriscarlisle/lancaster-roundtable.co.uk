@@ -1,0 +1,87 @@
+/* PAGE HEADING */
+.page-heading {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/* ABOUT BLOCKS */
+.about-page {
+    padding-block: 4rem;
+}
+
+.padded-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.about-block {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* square logo + flexible text */
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 6rem;
+    padding: 1rem 2rem; /* space around each block */
+    background-color: rgba(255,255,255,0.03); /* subtle background to separate blocks if desired */
+    border-radius: 12px;
+}
+
+.about-block.reverse {
+    grid-template-columns: 1fr 200px; /* text first, logo second */
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin-inline: auto;
+}
+
+.about-text h3 {
+    margin-bottom: 0.75rem;
+}
+
+.about-text p {
+    font-size: 0.96rem;
+    line-height: 1.65;
+    margin-bottom: 0.85rem;
+}
+
+.about-text a {
+    color: var(--golden-yellow);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.about-text a:hover {
+    text-decoration: underline;
+}
+
+/* STATS FULL WIDTH */
+.stats-section.full-width {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.stats-section.full-width .stats-image {
+    width: 100%;
+    max-width: none;
+    display: block;
+    border-radius: 0;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .about-block,
+    .about-block.reverse {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .about-image img {
+        max-width: 150px;
+        margin-bottom: 1rem;
+    }
+}
