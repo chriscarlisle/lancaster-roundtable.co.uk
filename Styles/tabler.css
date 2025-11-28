@@ -2,7 +2,7 @@
    TEAM CARDS
    =========================== */
 .team {
-    background-color: var(--bg-team);
+    background-color: black;
     padding-block: 4rem;
 }
 
