@@ -1,0 +1,47 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.thank-you-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.thank-you-logo {
+    width: 220px;
+    max-width: 80%;
+    margin: 0 auto 1.5rem;
+}
+
+.thank-you-content h1 {
+    margin-bottom: 1rem;
+}
+
+.thank-you-content p {
+    margin-bottom: 1rem;
+}
+
+.thank-you-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    background-color: var(--golden-yellow);
+    color: var(--black);
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.thank-you-button:hover {
+    opacity: 0.9;
+}

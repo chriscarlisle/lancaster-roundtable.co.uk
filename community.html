@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Support Request | Lancaster Round Table</title>
+
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/layout.css">
+    <link rel="stylesheet" href="Styles/community.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="nav-container container">
+        <a href="index.html" class="logo-link">
+            <img src="images/RTLogos/Header.png" alt="Site Logo" class="logo">
+        </a>
+
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span><span></span><span></span>
+        </div>
+
+        <nav class="main-nav" id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="community.html">Community</a>
+            <a href="tablers.html">Tablers</a>
+            <a href="santas-sleigh.html">Santa's Sleigh</a>
+            <a href="area34.html">Area 34</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="container community-form">
+
+    <h1>Lancaster Round Table in the Community</h1>
+
+    <section class="community-highlight">
+
+        <!-- Galgate Treat Day -->
+        <div class="highlight-item">
+            <div class="highlight-image">
+                <img src="images/photos/4.JPG" alt="Galgate Treat Day">
+            </div>
+
+            <div class="highlight-content center">
+                <h2>Galgate Treat Day</h2>
+                <p>
+                    Lancaster Round Table was proud to support Galgate Treat Day by helping with the setup of stalls and activities, as well as running our own stand on the day.
+                    Our stand featured fun games for local families and gave us the chance to promote Round Table within the community, while also raising donations in support of Galgate Treat Day.
+                </p>
+            </div>
+        </div>
+
+        <!-- Galgate Fireworks -->
+        <div class="highlight-item">
+            <div class="highlight-image">
+                <img src="images/photos/2.jpeg" alt="Galgate Fireworks">
+            </div>
+
+            <div class="highlight-content center">
+                <h2>Galgate Fireworks</h2>
+                <p>
+                    Members of Lancaster Round Table volunteered to support the Galgate Fireworks event by stewarding the car park and entrance areas.
+                    Our role helped ensure visitors could enter and leave the event safely, contributing to a smooth and enjoyable evening for everyone attending.
+                </p>
+            </div>
+        </div>
+
+        <!-- Remembrance Day -->
+        <div class="highlight-item">
+            <div class="highlight-image">
+                <img src="images/photos/3.jpeg" alt="Remembrance Day">
+            </div>
+
+            <div class="highlight-content center">
+                <h2>Remembrance Day</h2>
+                <p>
+                    Lancaster Round Table members attended Remembrance Day to lay a wreath on behalf of the Table, paying our respects to those who have served and sacrificed.
+                    It was an important moment of reflection and remembrance, standing alongside the local community to honour their legacy.
+                </p>
+            </div>
+        </div>
+
+        <!-- Santa’s Sleigh (LAST + CTA) -->
+        <div class="highlight-item">
+            <div class="highlight-image">
+                <img src="images/SleighPhotos/2.jpeg" alt="Santa’s Sleigh Community Event">
+            </div>
+
+            <div class="highlight-content center">
+                <h2>Santa’s Sleigh</h2>
+                <p>
+                    Lancaster Round Table proudly operates the Santa’s Sleigh event each December, bringing festive cheer to local communities.
+                    Our members volunteer their time to drive the sleigh, distribute treats, and spread holiday joy to children and families across the area.
+                </p>
+
+                <a href="santas-sleigh.html" class="highlight-btn">
+                    Find out more
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <h1>Community Support Request</h1>
+
+    <p class="center">
+        Lancaster Round Table is a local social and charitable group of men aged 18–45.
+        We support our community through fundraising, volunteering, and practical help.
+    </p>
+
+    <p class="notice center">
+        Please note: We are not an emergency service and cannot guarantee support for every request.
+    </p>
+
+    <form action="community-submit.php" method="POST">
+
+        <fieldset>
+            <legend>1. About You</legend>
+
+            <label>Full Name *
+                <input type="text" name="full_name" required>
+            </label>
+
+            <label>Organisation / Group Name
+                <input type="text" name="organisation">
+            </label>
+
+            <label>Applying As
+                <select name="applying_as">
+                    <option value="">Select</option>
+                    <option>Individual</option>
+                    <option>Charity</option>
+                    <option>Community Group</option>
+                    <option>School</option>
+                    <option>Other</option>
+                </select>
+            </label>
+
+            <label>Email Address *
+                <input type="email" name="email" required>
+            </label>
+
+            <label>Phone Number
+                <input type="tel" name="phone">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>2. About the Request</legend>
+
+            <label>Who is the support for?
+                <input type="text" name="support_for">
+            </label>
+
+            <label>Postcode / Area
+                <input type="text" name="area">
+            </label>
+
+            <label>Type of Support Requested
+                <select name="support_type">
+                    <option value="">Select</option>
+                    <option>Financial</option>
+                    <option>Practical Help</option>
+                    <option>Volunteering</option>
+                    <option>Other</option>
+                </select>
+            </label>
+
+            <label>Description of Request - Please explain what the cs request is for and the benefit/impact it will have *
+                <textarea name="description" rows="10"></textarea>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>3. Timescales & Practicalities</legend>
+
+            <label>Is this request time-sensitive?
+                <select name="time_sensitive">
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </label>
+
+            <label>Deadline Date
+                <input type="date" name="deadline">
+            </label>
+
+            <label>Specific Amount Requested (if financial)
+                <input type="text" name="amount">
+            </label>
+
+            <label>Have you approached other organisations?
+                <select name="approached_others">
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>4. Declaration</legend>
+
+            <label class="checkbox">
+                <input type="checkbox" required>
+                I confirm the information provided is accurate and genuine.
+            </label>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">Submit Request</button>
+    </form>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content container">
+        <div class="footer-left">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:lancaster@roundtable.org.uk">lancaster@roundtable.org.uk</a></p>
+            <p>Phone: <a href="tel:+447587673518">07587 673518</a></p>
+        </div>
+        <div class="footer-right">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Lancaster160/?locale=en_GB">
+                    <img src="images/icons/facebook-logo.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/lancasterroundtable/">
+                    <img src="images/icons/instagram-logo.svg" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Lancaster Round Table. All rights reserved.<br>
+            Website by <a href="#">Lancaster Webmaster</a>
+        </p>
+    </div>
+</footer>
+
+<!-- JS for mobile nav toggle -->
+<script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+
+    navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+    });
+</script>
+
+</body>
+</html>
