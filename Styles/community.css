@@ -77,51 +77,33 @@
 }
 
 /* ===========================
-   FORM STYLES
+   DOWNLOAD SECTION
    =========================== */
 
-form {
+.download-section {
     margin-top: 2rem;
-}
-
-fieldset {
     border: 1px solid rgba(255,255,255,0.2);
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+    padding: 2rem;
     border-radius: 8px;
 }
 
-legend {
-    padding: 0 0.5rem;
-    font-weight: bold;
+.download-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
+.instructions-list {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    padding-left: 1.5rem;
+    line-height: 1.8;
 }
 
-input,
-select,
-textarea {
-    padding: 0.6rem;
-    border-radius: 6px;
-    border: none;
-    font-size: 1rem;
+.instructions-list li {
+    margin-bottom: 0.5rem;
 }
 
-textarea {
-    resize: vertical;
-}
-
-.checkbox {
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.submit-btn {
+.download-btn {
     background-color: var(--golden-yellow);
     color: var(--black);
     font-weight: bold;
@@ -130,11 +112,14 @@ textarea {
     border-radius: 8px;
     cursor: pointer;
     display: block;
+    width: fit-content;
     margin: 2rem auto 0;
+    text-decoration: none;
+    text-align: center;
     transition: opacity 0.2s ease;
 }
 
-.submit-btn:hover {
+.download-btn:hover {
     opacity: 0.9;
 }
 
