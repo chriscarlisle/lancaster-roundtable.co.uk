@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'Eurostile_Extended_Bold';
-    src: url('fonts/Eurostile_Extended_Bold.woff2') format('woff2');
+    src: url('../Fonts/Eurostile_Extended_Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
