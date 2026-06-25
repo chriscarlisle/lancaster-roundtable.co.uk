@@ -1,81 +1,291 @@
-/* ===========================
-   TEAM CARDS
-   =========================== */
-.team {
-    background-color: black;
-    padding-block: 4rem;
+/* ---------------------------
+   PAGE HERO
+---------------------------- */
+.tablers-hero {
+    background-color: var(--black);
+    padding: 5.5rem 1rem 4.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.tablers-hero::before {
+    content: 'TABLE';
+    position: absolute;
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 20rem;
+    color: rgba(255, 255, 255, 0.06);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+.tablers-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.tablers-label {
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.5em;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0 0 1.25rem;
+    text-transform: uppercase;
+}
+
+.tablers-hero h1 {
+    font-size: 5rem;
+    line-height: 1.05;
+    margin: 0 0 1.5rem;
+}
+
+.line-white {
+    display: block;
+    color: var(--white);
+}
+
+.line-gold {
+    display: block;
+    color: var(--golden-yellow);
+}
+
+.line-sub {
+    display: block;
+    font-size: 0.44em;
+    color: var(--golden-yellow);
+    margin-top: 0.5em;
+    letter-spacing: 0.1em;
+}
+
+.tablers-intro {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.04em;
+    margin: 0;
+}
+
+/* ---------------------------
+   TEAM GRID
+---------------------------- */
+.team-section {
+    background-color: var(--black);
+    padding: 5rem 1rem 6rem;
+    overflow: hidden;
 }
 
 .team-grid {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    margin: 2rem auto 0; /* centers the grid */
-    max-width: 1200px;   /* adjust to taste */
-    padding-inline: 1rem; /* small side padding */
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
 
 .team-card {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
     background: var(--table-grey);
-    box-shadow: 0 5px 15px rgb(38, 38, 38);
-    transition: transform 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .team-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Hide image and info on hover, show overlay text */
-.team-card:hover .card-image,
-.team-card:hover .card-info {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.card-image {
+    height: 280px;
+    overflow: hidden;
 }
 
 .card-image img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 100%;
     object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.team-card:hover .card-image img {
+    opacity: 0;
 }
 
 .card-info {
     padding: 1rem;
     background-color: var(--golden-yellow);
     color: var(--black);
+    text-align: center;
     transition: opacity 0.3s ease;
-    text-align: center; /* ⭐ center name + role */
 }
 
-.card-info h3, .card-info p { margin: 0; }
+.card-info h3 {
+    margin: 0 0 0.2rem;
+    font-size: 1rem;
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.75;
+}
+
+.team-card:hover .card-info {
+    opacity: 0;
+}
 
 .card-hover {
     position: absolute;
     inset: 0;
-    background: rgba(29, 29, 26, 0.9);
+    background: rgba(29, 29, 26, 0.96);
     color: var(--white);
     opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
     text-align: center;
     transition: opacity 0.3s ease;
-    z-index: 0;
-    font-size: 0.9rem; /* smaller text */
-    line-height: 1.1;
+    z-index: 10;
+    border: 1px solid rgba(251, 175, 51, 0.2);
+    border-radius: 12px;
+    overflow-y: auto;
 }
 
 .team-card:hover .card-hover {
     opacity: 1;
-    z-index: 10; /* ensures overlay text sits above hidden content */
 }
 
-/* Optional: smaller headings in overlay */
-.card-hover h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+.card-hover p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+/* ---------------------------
+   FANCY IT CTA
+---------------------------- */
+.tablers-cta {
+    background-color: var(--table-grey);
+    padding: 6rem 1rem 5rem;
+    text-align: center;
+}
+
+.tablers-cta h2 {
+    font-size: 4.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.tablers-cta p:not(.btn) {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 1.2rem;
+    max-width: 520px;
+    margin: 0 auto 2.75rem;
+    line-height: 1.65;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.1rem 2.8rem;
+    border-radius: 6px;
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.btn-primary {
+    background-color: var(--golden-yellow);
+    color: var(--black);
+    border: 2px solid var(--golden-yellow);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--golden-yellow);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-secondary:hover {
+    border-color: var(--white);
+    background-color: var(--white);
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* ---------------------------
+   RESPONSIVE
+---------------------------- */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tablers-hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .team-section {
+        padding: 3.5rem 1rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tablers-cta h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tablers-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .tablers-hero {
+        padding: 4rem 1rem 3rem;
+    }
+
+    .tablers-cta h2 {
+        font-size: 2.2rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .card-image {
+        height: 200px;
+    }
 }

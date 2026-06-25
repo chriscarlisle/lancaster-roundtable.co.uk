@@ -3,31 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lancaster Round Table</title>
+    <title>Contact | Lancaster Round Table</title>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8543ef25-5404-4796-aa72-9b1f2a790d1d"></script>
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="Styles/base.css">   <!-- fonts & colors -->
-    <link rel="stylesheet" href="Styles/layout.css"> <!-- header/nav & footer -->
-    <link rel="stylesheet" href="Styles/contact.css">   <!-- page-specific styles -->
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/layout.css">
+    <link rel="stylesheet" href="Styles/contact.css">
 </head>
 <body>
 
 <!-- HEADER / NAV -->
 <header class="site-header">
     <div class="nav-container container">
-        <a href="contact.html" class="logo-link">
+        <a href="index.html" class="logo-link">
             <img src="images/RTLogos/Header.png" alt="Site Logo" class="logo">
         </a>
-
-        <!-- Hamburger Toggle -->
         <div class="nav-toggle" id="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
-
-        <!-- Navigation Links -->
         <nav class="main-nav" id="main-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -40,61 +33,86 @@
     </div>
 </header>
 
-<!-- INTRO SECTION -->
-<section class="intro container" style="position: relative; padding-block: 3rem; padding-bottom: 5rem;">
-    <div class="intro-text" style="text-align: center;">
-        <h1>Contact Lancaster Round Table</h1>
-        <p>Reach out to us via email, WhatsApp or the below form! Join us at our next event and see what Roundtable is all about.</p>
-        <p>We'd love to hear from you!</p>
+<!-- PAGE HERO -->
+<section class="contact-hero">
+    <div class="container">
+        <p class="contact-label">DROP US A LINE</p>
+        <h1>
+            GET IN TOUCH
+            <span class="text-gold">WE'D LOVE TO HEAR FROM YOU</span>
+        </h1>
     </div>
+</section>
 
-    <div class="contact-layout" style="margin-bottom: 3rem;">
-        <!-- Form Section (Left) -->
-        <div class="form-section">
-            <div class="contact-icons">
-                <p>
-                    <a href="mailto:Lancaster@roundtable.org.uk">
-                        <i class="fas fa-envelope"></i> Lancaster@roundtable.org.uk
-                    </a>
-                </p>
-                <p>
-                    <a href="tel:+447587673518">
-                        <i class="fas fa-phone"></i> 07587 673518
-                    </a>
-                </p>
+<!-- GOLD BAND -->
+<div class="gold-band">
+    <p>EMAIL &bull; WHATSAPP &bull; CONTACT FORM</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+    <div class="container contact-grid reveal">
+
+        <!-- Left: details + form -->
+        <div class="contact-left">
+            <div class="contact-methods">
+                <a href="mailto:lancaster@roundtable.org.uk" class="contact-method">
+                    <span class="method-icon">✉</span>
+                    <div>
+                        <p class="method-label">Email</p>
+                        <p class="method-value">lancaster@roundtable.org.uk</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/447587673518" class="contact-method" target="_blank" rel="noopener">
+                    <span class="method-icon">💬</span>
+                    <div>
+                        <p class="method-label">WhatsApp</p>
+                        <p class="method-value">07587 673518</p>
+                    </div>
+                </a>
             </div>
 
-            <form action="#" method="post">
-                <label for="name">Your Name *</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Your Email *</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Send Message</button>
+            <form action="thank-you.html" method="get" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Smith" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about yourself or ask us anything..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
 
-        <!-- Video Section (Right) -->
-        <div class="form-video-container">
-            <video class="form-video" src="./Videos/domore-Gif-2024.mp4" autoplay muted controls loop></video>
+        <!-- Right: video -->
+        <div class="contact-right">
+            <div class="contact-video-wrap">
+                <video src="./Videos/domore-Gif-2024.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="contact-aside">
+                <p>No pressure, no awkward sign-up. Just drop us a message and come along to an event to see what we're about.</p>
+            </div>
         </div>
+
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-content container">
-        <div class="footer-left">
-            <h3>Contact Us</h3>
-            <p>Email: <a href="mailto:lancaster@roundtable.org.uk">lancaster@roundtable.org.uk</a></p>
-            <p>WhatsApp: <a href="tel:+447587673518">07587 673518</a></p>
+    <div class="footer-inner container">
+        <div class="footer-brand">
+            <img src="images/RTLogos/Header.png" alt="Lancaster Round Table" class="footer-logo">
+            <p>Ignite your social life. Do More.</p>
         </div>
-        <div class="footer-right">
-            <h3>Follow Us</h3>
+        <div class="footer-contact">
+            <h4 class="footer-heading">Get in Touch</h4>
+            <p><a href="mailto:lancaster@roundtable.org.uk">lancaster@roundtable.org.uk</a></p>
+            <p><a href="https://wa.me/447587673518">07587 673518</a></p>
             <div class="social-icons">
                 <a href="https://www.facebook.com/Lancaster160/?locale=en_GB">
                     <img src="images/icons/facebook-logo.svg" alt="Facebook">
@@ -106,20 +124,25 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 Lancaster Round Table. All rights reserved.<br>
-            Website by <a href="#">Lancaster Webmaster</a>
-        </p>
+        <p>© 2025 Lancaster Round Table. All rights reserved.</p>
     </div>
 </footer>
 
-<!-- JS to toggle mobile nav -->
 <script>
     const navToggle = document.getElementById('nav-toggle');
     const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
 
-    navToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('open');
-    });
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 
 </body>

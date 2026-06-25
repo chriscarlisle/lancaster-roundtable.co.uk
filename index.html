@@ -40,81 +40,158 @@
     </div>
 </header>
 
-<!-- FULL-WIDTH VIDEO -->
-<section class="promo-video">
-    <video class="full-width-video" autoplay muted loop playsinline>
+<!-- HERO (video background + text overlay) -->
+<section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
         <source src="Videos/index-header.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="video-fade"></div>
-</section>
-
-<!-- INTRO SECTION -->
-<section class="intro">
-    <div class="container intro-text">
-        <h1>Welcome to Lancaster Round Table</h1>
-        <p> Sick of the same old routine? Stuck in a rut? Want to meet new people? </p>
-        <p> Lancaster Round Table are a group of normal guys who meet up twice a month, do something fun and engage in our community. </p>
-        <p> No funny handshakes, no weird entry criteria, just a group of guys looking to get out of the house and do more. </p>
-        <p> Ignite your Social Life – Join Round Table – Do More! </p>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+        <p class="est-tag">EST. 1947 &bull; LANCASTER</p>
+        <h1>
+            <span class="hero-white">SICK OF THE SAME</span><br>
+            <span class="hero-gold">OLD ROUTINE?</span>
+        </h1>
+        <div class="hero-blurb">
+            <p>Lancaster Round Table are a group of normal guys who meet up twice a month, do something fun and give back to our community.</p>
+            <p>No funny handshakes, no weird entry criteria, just a group of guys looking to get out of the house and do more.</p>
+        </div>
+        <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">Come Along to an Event</a>
+            <a href="about.html" class="btn btn-secondary">What's It All About</a>
+        </div>
+        <p class="no-pressure-text">No pressure, just drop us a message to find out more</p>
     </div>
 </section>
 
-<!-- PROMO VIDEO ABOVE PHOTO GRID -->
-<section class="homepage-promo-video">
-    <video class="promo-video-element" autoplay muted loop playsinline>
-        <source src="Videos/promo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<!-- GOLD BAND -->
+<section class="gold-band">
+    <p class="reveal">DO MORE &bull; IGNITE YOUR SOCIAL LIFE</p>
 </section>
 
-<!-- HOMEPAGE PHOTO GRID
-<section class="homepage-photo-grid container">
-    <h2 class="grid-heading">Programme 2025-26</h2>
-    <div class="grid-wrapper">
-        <div class="grid-item">
-            <img src="images/Programme25-26/WeWishYouAMerryMurder.png" alt="We Wish you a Merry Murder">
-        </div>
-        <div class="grid-item">
-            <img src="images/Programme25-26/MysteryNight.png" alt="Mystery Night">
-        </div>
-        <div class="grid-item">
-            <img src="images/Programme25-26/SinkOrSwim.png" alt="Sink Or Swim">
-        </div>
-        <div class="grid-item">
-            <img src="images/Programme25-26/ForgedInFire.png" alt="Forged in Fire">
-        </div>
-        <div class="grid-item">
-            <img src="images/Programme25-26/KingOfThePins.png" alt="King of the Pins">
-        </div>
-        <div class="grid-item">
-            <img src="images/Programme25-26/DriveToSurvive.png" alt="Drive to Survive">
-        </div>
-        <div class="grid-item">
-            <img src="images/Programme25-26/BusinessBBQ.png" alt="Business BBQ">
-        </div>
-        <div class="grid-item">
-            <img src="images/Programme25-26/RecordBreakers.png" alt="Record Breakers">
-        </div>
-        <div class="grid-item">
-            <img src="images/Programme25-26/BusinessBurgers.png" alt="Business Burgers">
-        </div>
-        <div class="grid-item">
-            <img src="images/Programme25-26/RugbyGolf.png" alt="Rugby Golf">
+<!-- WHAT WE DO -->
+<section class="what-we-do">
+    <div class="container">
+        <h2 class="reveal" data-delay="0">
+            WHAT WE DO
+            <span class="text-gold">MORE THAN JUST A NIGHT OUT</span>
+        </h2>
+        <div class="pillars">
+            <div class="pillar reveal" data-delay="0.1">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+                    </svg>
+                </div>
+                <h4>Adventure</h4>
+                <p>From axe throwing and motorsport to escape rooms and archery, no two meetings are the same. We do things that are genuinely fun, push you out of your comfort zone and leave you with a story worth telling.</p>
+            </div>
+            <div class="pillar reveal" data-delay="0.25">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="8" cy="7" r="4"/>
+                        <path d="M2 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                        <path d="M17 11a3 3 0 1 0 0-6"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                    </svg>
+                </div>
+                <h4>Friendship</h4>
+                <p>The best friendships form when you're doing something daft together on a Thursday night. Round Table is a group of lads from all walks of life, different jobs, different backgrounds, same sense of humour.</p>
+            </div>
+            <div class="pillar reveal" data-delay="0.4">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                        <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/>
+                        <path d="m18 15-2-2"/>
+                        <path d="m15 18-2-2"/>
+                    </svg>
+                </div>
+                <h4>Community</h4>
+                <p>We run Santa's Sleigh every Christmas, raise money for local causes and show up where it matters. Being part of Round Table means what you do has an impact beyond just a good night out.</p>
+            </div>
         </div>
     </div>
-</section>-->
+</section>
+
+<!-- SANTA'S SLEIGH -->
+<section class="sleigh-section">
+    <div class="container">
+        <img src="images/RTLogos/hohoho.png" alt="Ho Ho Ho" class="sleigh-logo reveal" data-delay="0">
+        <h2 class="reveal" data-delay="0.1">SANTA'S SLEIGH</h2>
+        <p class="sleigh-copy reveal" data-delay="0.2">You've seen the sleigh. Now meet the club behind it. Every December we take to the streets of Lancaster, bring thousands of people together and raise money for the local causes that need it most — all powered by a group of lads who just want to make Christmas a little more magical.</p>
+        <div class="sleigh-stats reveal" data-delay="0.3">
+            <div class="sleigh-stat">
+                <span class="stat-num" data-target="5300" data-prefix="£" data-suffix="+">£0</span>
+                <p>Raised for local causes</p>
+            </div>
+            <div class="sleigh-stat">
+                <span class="stat-num" data-target="2000" data-prefix="£" data-suffix="+">£0</span>
+                <p>Donated to volunteer groups</p>
+            </div>
+        </div>
+        <div class="cta-buttons reveal" data-delay="0.4">
+            <a href="santas-sleigh.html" class="btn btn-primary">Routes &amp; More</a>
+            <a href="https://pay.sumup.com/b2c/QFAI9ZD3" class="btn btn-secondary" target="_blank" rel="noopener">Donate Now</a>
+            <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+        </div>
+    </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider"></div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+    <div class="container">
+        <h2 class="reveal" data-delay="0">
+            <span class="section-label">DON'T TAKE OUR WORD FOR IT</span>
+            WHY THE LADS JOINED
+        </h2>
+        <div class="quotes-grid">
+            <div class="quote-card reveal" data-delay="0.1">
+                <span class="quote-mark">"</span>
+                <blockquote>Table has opened so many doors for me to experience things that I would have never done otherwise. Twice a month I get to go out, be myself, meet up with a great group of mates and do something a bit different.</blockquote>
+                <cite>Blake — Immediate Past Chair</cite>
+            </div>
+            <div class="quote-card reveal" data-delay="0.25">
+                <span class="quote-mark">"</span>
+                <blockquote>It's massively pushed me out of my comfort zone, helped me connect with people I wouldn't normally talk to, and I love it for that. I've gained lifelong friends and grown even more confident in myself.</blockquote>
+                <cite>Jason — Vice Chair</cite>
+            </div>
+            <div class="quote-card reveal" data-delay="0.4">
+                <span class="quote-mark">"</span>
+                <blockquote>Round Table has completely transformed my life. I went from having no social circle to being surrounded by great friends and community — constantly socialising, getting involved in exciting events and making unforgettable memories.</blockquote>
+                <cite>Luke — Social Media</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FANCY IT -->
+<section class="fancy-it-section">
+    <div class="container">
+        <h2 class="reveal" data-delay="0">Fancy It?</h2>
+        <p class="reveal" data-delay="0.15">Come and see what we're about. No pressure, no awkward sign-up.</p>
+        <div class="cta-buttons reveal" data-delay="0.3">
+            <a href="https://wa.me/447587673518" class="btn btn-primary" target="_blank" rel="noopener">WhatsApp Us</a>
+            <a href="mailto:lancaster@roundtable.org.uk" class="btn btn-secondary">Email Us</a>
+        </div>
+    </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-content container">
-        <div class="footer-left">
-            <h3>Contact Us</h3>
-            <p>Email: <a href="mailto:lancaster@roundtable.org.uk">lancaster@roundtable.org.uk</a></p>
-            <p>WhatsApp: <a href="tel:+447587673518">07587 673518</a></p>
+    <div class="footer-inner container">
+        <div class="footer-brand">
+            <img src="images/RTLogos/Header.png" alt="Lancaster Round Table" class="footer-logo">
+            <p>Ignite your social life. Do More.</p>
         </div>
-        <div class="footer-right">
-            <h3>Follow Us</h3>
+        <div class="footer-contact">
+            <h4 class="footer-heading">Get in Touch</h4>
+            <p><a href="mailto:lancaster@roundtable.org.uk">lancaster@roundtable.org.uk</a></p>
+            <p><a href="https://wa.me/447587673518">07587 673518</a></p>
             <div class="social-icons">
                 <a href="https://www.facebook.com/Lancaster160/?locale=en_GB">
                     <img src="images/icons/facebook-logo.svg" alt="Facebook">
@@ -126,20 +203,60 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 Lancaster Round Table. All rights reserved.<br>
-            Website by <a href="#">Lancaster Webmaster</a>
-        </p>
+        <p>© 2025 Lancaster Round Table. All rights reserved.</p>
     </div>
 </footer>
 
-<!-- JS to toggle mobile nav -->
+<!-- JS -->
 <script>
+    // Mobile nav toggle
     const navToggle = document.getElementById('nav-toggle');
     const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
 
-    navToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('open');
-    });
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = parseFloat(entry.target.dataset.delay || 0) * 1000;
+                setTimeout(() => entry.target.classList.add('revealed'), delay);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Animated counters
+    function animateCounter(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        const duration = 2000;
+        const startTime = performance.now();
+
+        function tick(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.floor(eased * target);
+            el.textContent = prefix + value.toLocaleString() + (progress >= 1 ? suffix : '');
+            if (progress < 1) requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.stat-num').forEach(animateCounter);
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    const sleighStats = document.querySelector('.sleigh-stats');
+    if (sleighStats) statsObserver.observe(sleighStats);
 </script>
 
 </body>

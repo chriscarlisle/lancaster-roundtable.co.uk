@@ -8,6 +8,7 @@
     top: 0;
     z-index: 999;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    border-bottom: 3px solid var(--golden-yellow);
 }
 
 .nav-container {
@@ -117,52 +118,149 @@
 footer {
     background-color: var(--table-grey);
     color: var(--white);
-    padding: 2rem 1rem 1rem;
+    border-top: 3px solid var(--golden-yellow);
 }
 
-.footer-content {
+.footer-inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 860px;
     margin: 0 auto;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3.5rem 1rem 2.5rem;
+    align-items: center;
 }
 
-.footer-left, .footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.footer-brand {
     text-align: center;
 }
 
-.footer-left h3,
-.footer-right h3 {
-    margin-bottom: 0.5rem;
+.footer-logo {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
 }
 
-.footer-right .social-icons {
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-heading {
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--golden-yellow);
+    margin: 0 0 1rem;
+}
+
+.footer-contact {
+    text-align: center;
+}
+
+.footer-contact p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin: 0 0 0.4rem;
+}
+
+.footer-contact p a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact p a:hover {
+    color: var(--golden-yellow);
+    text-decoration: none;
+}
+
+.social-icons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 0.25rem;
+    gap: 0.75rem;
+    margin-top: 1rem;
 }
 
-.footer-right .social-icons a img {
-    width: 28px;
-    height: 28px;
+.social-icons a img {
+    width: 24px;
+    height: 24px;
     filter: brightness(0) invert(1);
-    transition: transform 0.2s ease;
+    opacity: 0.6;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: block;
 }
 
-.footer-right .social-icons a:hover img {
-    transform: scale(1.1)
+.social-icons a:hover img {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .footer-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
+    padding: 1.25rem 1rem;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2.5rem 1rem 2rem;
+    }
+}
+
+/* ---------------------------
+   GOLD BAND (shared across pages)
+---------------------------- */
+.gold-band {
+    background-color: var(--golden-yellow);
+    padding: 1.4rem 1rem;
+    text-align: center;
+}
+
+.gold-band p {
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    letter-spacing: 0.2em;
+    color: var(--black);
+    margin: 0;
+}
+
+/* ---------------------------
+   TEXT UTILITY
+---------------------------- */
+.text-gold {
+    color: var(--golden-yellow);
+}
+
+/* ---------------------------
+   SCROLL REVEAL (shared across pages)
+---------------------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
 }
