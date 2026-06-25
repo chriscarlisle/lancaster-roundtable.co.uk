@@ -39,7 +39,7 @@
 }
 
 .tablers-hero h1 {
-    font-size: 5rem;
+    font-size: clamp(1.6rem, 7vw, 5rem);
     line-height: 1.05;
     margin: 0 0 1.5rem;
 }
@@ -150,7 +150,7 @@
     opacity: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 1.5rem;
     text-align: center;
     transition: opacity 0.3s ease;
@@ -246,8 +246,8 @@
 }
 
 @media (max-width: 768px) {
-    .tablers-hero h1 {
-        font-size: 3.2rem;
+    .tablers-hero::before {
+        font-size: 10rem;
     }
 
     .team-section {
@@ -264,8 +264,8 @@
 }
 
 @media (max-width: 480px) {
-    .tablers-hero h1 {
-        font-size: 2.2rem;
+    .tablers-hero::before {
+        font-size: 6rem;
     }
 
     .tablers-hero {

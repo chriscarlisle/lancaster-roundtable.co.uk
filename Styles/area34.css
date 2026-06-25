@@ -44,7 +44,7 @@
 }
 
 .area-hero h1 {
-    font-size: 5rem;
+    font-size: clamp(2rem, 9vw, 5rem);
     line-height: 1.05;
     margin: 0;
 }
@@ -175,6 +175,10 @@
         font-size: 3.5rem;
     }
 
+    .area-rose-bg img {
+        max-width: 300px;
+    }
+
     .area-info-inner {
         text-align: center;
     }
@@ -199,7 +203,7 @@
 
 @media (max-width: 480px) {
     .area-hero h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
 
     .area-hero {

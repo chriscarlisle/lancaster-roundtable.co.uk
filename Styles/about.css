@@ -40,7 +40,7 @@
 }
 
 .about-hero h1 {
-    font-size: 5rem;
+    font-size: clamp(2rem, 9vw, 5rem);
     line-height: 1.05;
     margin: 0;
 }
@@ -185,8 +185,8 @@
    RESPONSIVE
 ---------------------------- */
 @media (max-width: 768px) {
-    .about-hero h1 {
-        font-size: 3.5rem;
+    .about-hero::before {
+        font-size: 10rem;
     }
 
     .about-block,
@@ -215,8 +215,8 @@
 }
 
 @media (max-width: 480px) {
-    .about-hero h1 {
-        font-size: 2.4rem;
+    .about-hero::before {
+        font-size: 6rem;
     }
 
     .about-hero {

@@ -37,7 +37,7 @@
 }
 
 .sleigh-hero h1 {
-    font-size: 5.5rem;
+    font-size: clamp(2rem, 9vw, 5.5rem);
     line-height: 1.0;
     margin: 0 0 1.5rem;
 }
@@ -433,8 +433,8 @@
    RESPONSIVE
 ---------------------------- */
 @media (max-width: 768px) {
-    .sleigh-hero h1 {
-        font-size: 3.5rem;
+    .sleigh-hero::before {
+        font-size: 10rem;
     }
 
     .sleigh-info {
@@ -482,8 +482,8 @@
         min-height: 100svh;
     }
 
-    .sleigh-hero h1 {
-        font-size: 2.5rem;
+    .sleigh-hero::before {
+        font-size: 6rem;
     }
 
     .sleigh-info {
