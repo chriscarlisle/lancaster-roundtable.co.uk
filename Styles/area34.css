@@ -175,6 +175,15 @@
         font-size: 3.5rem;
     }
 
+    .area-info-inner {
+        text-align: center;
+    }
+
+    .area-info-text h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .clubs-grid {
         gap: 2rem;
     }
@@ -197,11 +206,20 @@
         padding: 4rem 1rem 3rem;
     }
 
+    .area-label {
+        letter-spacing: 0.25em;
+    }
+
     .clubs-grid {
         gap: 1.5rem;
     }
 
     .club-item img {
         height: 80px;
+    }
+
+    .club-item p {
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
     }
 }

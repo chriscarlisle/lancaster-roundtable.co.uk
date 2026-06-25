@@ -253,6 +253,10 @@
         gap: 2.5rem;
     }
 
+    .community-block.reverse .community-image {
+        order: -1;
+    }
+
     .community-text h2::after {
         margin-left: auto;
         margin-right: auto;

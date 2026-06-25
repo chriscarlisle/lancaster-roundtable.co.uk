@@ -223,8 +223,17 @@
         padding: 4rem 1rem 3rem;
     }
 
+    .about-section {
+        padding: 2.5rem 0;
+    }
+
     .about-cta h2 {
         font-size: 2.2rem;
+    }
+
+    .about-label {
+        letter-spacing: 0.25em;
+        font-size: 0.75rem;
     }
 
     .btn {

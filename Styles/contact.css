@@ -220,6 +220,10 @@
         gap: 3rem;
     }
 
+    .contact-section {
+        padding: 3.5rem 0 4rem;
+    }
+
     .contact-hero h1 {
         font-size: 3.5rem;
     }

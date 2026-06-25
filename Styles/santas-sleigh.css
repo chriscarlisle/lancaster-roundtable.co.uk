@@ -433,17 +433,20 @@
    RESPONSIVE
 ---------------------------- */
 @media (max-width: 768px) {
-    .sleigh-hero-content h1 {
+    .sleigh-hero h1 {
         font-size: 3.5rem;
     }
 
-    .sleigh-info-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
+    .sleigh-info {
+        min-height: 480px;
     }
 
-    .sleigh-info-text h2::after {
+    .sleigh-info-content {
+        text-align: center;
+        padding: 3rem 1rem 3.5rem;
+    }
+
+    .sleigh-info-content h2::after {
         margin-left: auto;
         margin-right: auto;
     }
@@ -468,6 +471,10 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
     }
+
+    .sleigh-routes h2 {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -475,8 +482,12 @@
         min-height: 100svh;
     }
 
-    .sleigh-hero-content h1 {
+    .sleigh-hero h1 {
         font-size: 2.5rem;
+    }
+
+    .sleigh-info {
+        min-height: 380px;
     }
 
     .btn {
@@ -491,5 +502,9 @@
 
     .sleigh-involved h2 {
         font-size: 2rem;
+    }
+
+    .partners-heading {
+        font-size: 1.75rem;
     }
 }
