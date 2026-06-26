@@ -41,80 +41,6 @@
 </header>
 
 <!-- HERO (video background + text overlay) -->
-
-<section class="hero">
-    <video
-            id="heroVideo"
-            class="hero-video"
-            autoplay
-            muted
-            playsinline
-            loop
-            preload="auto"
-            poster="images/hero-fallback.jpg">
-        <source src="Videos/index-header.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    ```
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content container">
-        <p class="est-tag">EST. 1947 &bull; LANCASTER</p>
-
-        <h1>
-            <span class="hero-white">SICK OF THE SAME</span><br>
-            <span class="hero-gold">OLD ROUTINE?</span>
-        </h1>
-
-        <div class="hero-blurb">
-            <p>
-                Lancaster Round Table are a group of normal guys who meet up
-                twice a month, do something fun and give back to our community.
-            </p>
-            <p>
-                No funny handshakes, no weird entry criteria, just a group of
-                guys looking to get out of the house and do more.
-            </p>
-        </div>
-
-        <div class="cta-buttons">
-            <a href="contact.html" class="btn btn-primary">
-                Come Along to an Event
-            </a>
-            <a href="about.html" class="btn btn-secondary">
-                What's It All About
-            </a>
-        </div>
-
-        <p class="no-pressure-text">
-            No pressure, just drop us a message to find out more
-        </p>
-    </div>
-    ```
-
-</section>
-
-<script>
-    window.addEventListener('load', async () => {
-        const video = document.getElementById('heroVideo');
-
-        if (!video) return;
-
-        video.muted = true;
-        video.defaultMuted = true;
-        video.setAttribute('muted', '');
-
-        try {
-            await video.play();
-            console.log('Hero video autoplay successful');
-        } catch (err) {
-            console.error('Hero video autoplay failed:', err);
-        }
-    });
-</script>
-
-<!--&lt;!&ndash; HERO (video background + text overlay) &ndash;&gt;
 <section class="hero">
     <video class="hero-video" autoplay muted loop playsinline>
         <source src="Videos/index-header.mp4" type="video/mp4">
@@ -137,7 +63,7 @@
         </div>
         <p class="no-pressure-text">No pressure, just drop us a message to find out more</p>
     </div>
-</section>-->
+</section>
 
 <!-- GOLD BAND -->
 <section class="gold-band">
