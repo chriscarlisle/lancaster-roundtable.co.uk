@@ -102,6 +102,73 @@
     </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-head">
+            <p class="faq-eyebrow">No daft questions</p>
+            <h2 class="faq-title">
+                THINKING ABOUT IT?
+                <span class="text-gold">THINGS PEOPLE USUALLY ASK</span>
+            </h2>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item open">
+                <button class="faq-q" aria-expanded="false">
+                    What does it cost?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">A small monthly fee covers membership and insurance. Beyond that you just pay your own way at events, and we keep those reasonably priced — most nights are between free and £20.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    How much time does it take?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Two Thursdays a month is the core of it. Come to what you can, skip what you can't. Life happens — nobody's counting.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    Do I have to commit straight away?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">No. You come along as a prospect first and join us for three events before deciding whether it's for you. No pressure either way.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    I don't know anyone. Is that weird?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Not at all — most lads turn up not knowing a soul. When you reach out we'll pair you up with someone from the Table to be your point of contact, so you'll have a familiar face to show you the ropes from day one.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    Am I too old or too young?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Round Table is for men aged 18 to 45. There's a whole range of ages and backgrounds in the room.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
     <div class="footer-inner container">
@@ -143,6 +210,30 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ---- FAQ accordion ---- */
+    var openItem = document.querySelector('.faq-item.open .faq-a');
+    if (openItem) openItem.style.maxHeight = openItem.scrollHeight + 'px';
+
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = btn.closest('.faq-item');
+            var answer = item.querySelector('.faq-a');
+            var isOpen = item.classList.contains('open');
+
+            document.querySelectorAll('.faq-item').forEach(function(other) {
+                other.classList.remove('open');
+                other.querySelector('.faq-a').style.maxHeight = null;
+                other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
 </script>
 
 </body>

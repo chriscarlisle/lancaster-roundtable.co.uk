@@ -1,4 +1,110 @@
 /* ---------------------------
+   BACK THE SLEIGH / SPONSOR
+---------------------------- */
+.sponsor-section {
+    background-color: var(--black);
+    padding: 5rem 0 6rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.sponsor-head {
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+.sponsor-eyebrow {
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    color: var(--golden-yellow);
+    text-transform: uppercase;
+    margin: 0 0 0.6rem;
+}
+
+.sponsor-title {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    margin: 0;
+}
+
+.sponsor-title .text-gold {
+    display: block;
+    font-size: 0.44em;
+    margin-top: 0.35em;
+}
+
+.sponsor-intro {
+    color: rgba(255,255,255,0.55);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0.75rem auto 2rem;
+    text-align: center;
+}
+
+.sponsor-perks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.perk-card {
+    background-color: var(--table-grey);
+    border-radius: 12px;
+    border-top: 3px solid var(--golden-yellow);
+    padding: 1.5rem 1.25rem;
+}
+
+.perk-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.perk-ico {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--golden-yellow);
+}
+
+.perk-card h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.perk-card p {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.sponsor-cta {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.sponsor-cta p {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.95rem;
+    margin: 0;
+    max-width: 420px;
+}
+
+/* ---------------------------
    HERO
 ---------------------------- */
 .sleigh-hero {
@@ -506,5 +612,9 @@
 
     .partners-heading {
         font-size: 1.75rem;
+    }
+
+    .sponsor-perks {
+        grid-template-columns: 1fr;
     }
 }
