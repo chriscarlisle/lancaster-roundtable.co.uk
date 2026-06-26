@@ -212,9 +212,20 @@
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     /* ---- FAQ accordion ---- */
+    function measureHeight(el) {
+        el.style.maxHeight = 'none';
+        el.style.overflow = 'visible';
+        var h = el.scrollHeight;
+        el.style.maxHeight = null;
+        el.style.overflow = null;
+        return h;
+    }
+
     window.addEventListener('load', function() {
-        var openItem = document.querySelector('.faq-item.open .faq-a');
-        if (openItem) openItem.style.maxHeight = openItem.scrollHeight + 'px';
+        requestAnimationFrame(function() {
+            var openEl = document.querySelector('.faq-item.open .faq-a');
+            if (openEl) openEl.style.maxHeight = measureHeight(openEl) + 'px';
+        });
     });
 
     document.querySelectorAll('.faq-q').forEach(function(btn) {
@@ -231,7 +242,7 @@
 
             if (!isOpen) {
                 item.classList.add('open');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
+                answer.style.maxHeight = measureHeight(answer) + 'px';
                 btn.setAttribute('aria-expanded', 'true');
             }
         });
