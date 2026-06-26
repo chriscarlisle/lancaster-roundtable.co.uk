@@ -116,7 +116,7 @@
         <div class="faq-list">
 
             <div class="faq-item open">
-                <button class="faq-q" aria-expanded="false">
+                <button class="faq-q" aria-expanded="true">
                     What does it cost?
                     <span class="faq-chev" aria-hidden="true">&#8964;</span>
                 </button>
@@ -212,8 +212,10 @@
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     /* ---- FAQ accordion ---- */
-    var openItem = document.querySelector('.faq-item.open .faq-a');
-    if (openItem) openItem.style.maxHeight = openItem.scrollHeight + 'px';
+    window.addEventListener('load', function() {
+        var openItem = document.querySelector('.faq-item.open .faq-a');
+        if (openItem) openItem.style.maxHeight = openItem.scrollHeight + 'px';
+    });
 
     document.querySelectorAll('.faq-q').forEach(function(btn) {
         btn.addEventListener('click', function() {
