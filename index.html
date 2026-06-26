@@ -210,6 +210,11 @@
 <!-- JS -->
 <script>
     // Mobile nav toggle
+    document.querySelectorAll('video[autoplay]').forEach(function(v) {
+        v.muted = true;
+        v.play().catch(function() {});
+    });
+
     const navToggle = document.getElementById('nav-toggle');
     const mainNav = document.getElementById('main-nav');
     navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
