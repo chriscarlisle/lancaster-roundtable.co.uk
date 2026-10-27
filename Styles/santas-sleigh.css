@@ -158,6 +158,39 @@
     margin: 0 0 2.5rem;
 }
 
+.headline-sponsor {
+    margin-top: 2.5rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.headline-sponsor-label {
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--golden-yellow);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.headline-sponsor-link {
+    display: block;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.headline-sponsor-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+.headline-sponsor-logo {
+    width: min(480px, 90vw);
+    height: auto;
+    display: block;
+}
+
 /* ---------------------------
    SHARED LABELS & BUTTONS
 ---------------------------- */
@@ -378,7 +411,8 @@
     text-align: center;
 }
 
-.sleigh-routes h2 {
+.sleigh-routes h2,
+.route-schedule-section h2 {
     font-size: 2.5rem;
     margin-bottom: 1.25rem;
 }
@@ -391,19 +425,31 @@
     line-height: 1.75;
 }
 
-/* Route grid (for when routes go live) */
+/* ---------------------------
+   ROUTE SCHEDULE
+---------------------------- */
+.route-schedule-section {
+    background-color: var(--black);
+    padding: 2rem 1rem 5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
 .route-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 960px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
     margin: 3rem auto 0;
+    text-align: left;
 }
 
 .route-card {
     background-color: var(--table-grey);
     border-radius: 12px;
-    overflow: hidden;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s ease;
 }
 
@@ -411,31 +457,417 @@
     transform: translateY(-4px);
 }
 
-.route-card img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    cursor: zoom-in;
+.route-card-bidding {
+    border: 1px solid var(--golden-yellow);
+}
+
+.route-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.route-card-info {
+    flex: 1;
+    min-width: 0;
 }
 
 .route-card h3 {
-    font-size: 1.2rem;
-    margin: 1rem 1rem 0.3rem;
-    text-align: center;
+    font-size: 1.15rem;
+    margin: 0 0 0.4rem;
 }
 
 .route-date {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: rgba(255,255,255,0.7);
-    text-align: center;
-    margin: 0 0 0.2rem;
+    margin: 0 0 0.15rem;
 }
 
 .route-time {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--golden-yellow);
+    margin: 0;
+}
+
+.route-sponsor-logo {
+    flex: 0 0 auto;
+    width: 84px;
+    height: 84px;
+    border-radius: 8px;
+    background-color: rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.route-sponsor-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+}
+
+.route-sponsor-name {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0 0 1.1rem;
+}
+
+.route-sponsor-name a,
+.route-sponsor-logo a {
+    color: var(--golden-yellow);
+    text-decoration: none;
+}
+
+.route-sponsor-name a:hover,
+.route-sponsor-logo a:hover img {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+.route-card .btn {
+    width: 100%;
     text-align: center;
+    padding: 0.65rem 1.2rem;
+    font-size: 0.82rem;
+    margin-top: auto;
+}
+
+.route-card .btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.route-card .btn:disabled:hover {
+    background-color: transparent;
+    color: var(--white);
+    border-color: rgba(255,255,255,0.5);
+}
+
+.route-bid-result {
+    font-size: 0.85rem;
+    color: var(--golden-yellow);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Route picker (interactive map) */
+.route-picker {
+    max-width: 960px;
+    margin: 3rem auto 0;
+    text-align: left;
+}
+
+.route-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.route-tab {
+    background-color: var(--table-grey);
+    color: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    padding: 0.55rem 1.4rem;
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.route-tab:hover {
+    border-color: var(--golden-yellow);
+    color: var(--white);
+}
+
+.route-tab.active {
+    background-color: var(--golden-yellow);
+    color: var(--black);
+    border-color: var(--golden-yellow);
+}
+
+.route-map-wrap {
+    background-color: var(--table-grey);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+#route-map {
+    width: 100%;
+    height: 420px;
+    background-color: var(--table-grey);
+}
+
+/* Invert standard OSM tiles into a dark map to match the site theme, with a
+   cool "frosted" winter cast. Brightness/contrast are nudged up slightly
+   versus a plain invert so road-name labels stay legible under the tint. */
+#route-map .leaflet-tile-pane {
+    filter: invert(1) hue-rotate(190deg) brightness(0.92) saturate(0.55) contrast(1.05);
+}
+
+/* Low-opacity blue overlay for the "frosted" look — kept subtle (mix-blend
+   overlay, ~8% peak alpha) specifically so it doesn't wash out text labels.
+   Purely decorative: pointer-events none, sits above tiles, below markers. */
+.route-map-frost {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(150, 200, 255, 0.10) 0%, rgba(90, 130, 210, 0.05) 100%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 440;
+}
+
+/* Falling snow, drawn on a canvas above the frost tint */
+.route-map-snow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 450;
+}
+
+/* The dim, solid line previewing the whole route — always visible, sitting
+   underneath the snow trail. Its color/weight/opacity come from the
+   Leaflet layer options. */
+.route-line-base {
+    stroke-linecap: round;
+}
+
+/* The bright snow-white trail left behind the moving sleigh, grown frame by
+   frame in JS as it travels (see animateSleigh in santas-sleigh.html). */
+.route-line-trail {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Leaflet's default divIcon styling adds a white box + border — strip that
+   so only the sleigh SVG itself shows. */
+.sleigh-marker {
+    background: transparent;
+    border: none;
+}
+
+.sleigh-icon-wrap {
+    width: 38px;
+    height: 26px;
+    transform-origin: 50% 50%;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+}
+
+.sleigh-icon-wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.route-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1.1rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.route-details h3 {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.route-details .route-when {
+    color: var(--golden-yellow);
+    font-size: 0.95rem;
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+}
+
+/* Leaflet popup restyle to match brand */
+.leaflet-popup-content-wrapper {
+    background-color: var(--table-grey);
+    color: var(--white);
+    border-radius: 8px;
+}
+
+.leaflet-popup-tip {
+    background-color: var(--table-grey);
+}
+
+/* Start / Finish labels */
+.route-tooltip {
+    background-color: var(--table-grey);
+    border: 1px solid var(--golden-yellow);
+    color: var(--white);
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.route-tooltip-start,
+.route-tooltip-loop,
+.route-tooltip-pin {
+    color: var(--golden-yellow);
+}
+
+/* Static location pin (e.g. Morecambe FC — not a moving route) */
+.route-pin-dot {
+    width: 16px;
+    height: 16px;
+    background-color: var(--golden-yellow);
+    border: 2px solid var(--table-grey);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(251, 175, 51, 0.25);
+}
+
+/* ---------------------------
+   ADDRESS LOOKUP
+---------------------------- */
+.address-lookup {
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.address-lookup[hidden] {
+    display: none;
+}
+
+.address-lookup label {
+    display: block;
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 1.05rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.address-lookup-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.address-lookup-row input {
+    flex: 1 1 220px;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background-color: var(--table-grey);
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.address-lookup-row input:focus {
+    outline: none;
+    border-color: var(--golden-yellow);
+}
+
+.address-lookup-row .btn {
+    flex: 0 0 auto;
+    padding: 0.85rem 1.5rem;
+}
+
+.address-lookup-result {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 10px;
+    background-color: var(--table-grey);
+    font-size: 0.95rem;
+}
+
+.address-lookup-result[hidden] {
+    display: none;
+}
+
+.address-lookup-error {
+    color: rgba(255,255,255,0.65);
+}
+
+.address-lookup-route-name {
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 1.3rem;
+    margin: 0 0 0.35rem;
+}
+
+.address-lookup-countdown {
+    color: var(--golden-yellow);
+    font-size: 1.1rem;
+    margin: 0 0 0.35rem;
+}
+
+.address-lookup-date {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
     margin: 0 0 1rem;
+}
+
+/* ---------------------------
+   LIVE TRACKING
+---------------------------- */
+.live-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background-color: rgba(211, 28, 28, 0.12);
+    border: 1px solid rgba(211, 28, 28, 0.4);
+    color: var(--white);
+    border-radius: 999px;
+    padding: 0.65rem 1.4rem;
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.live-banner:hover {
+    background-color: rgba(211, 28, 28, 0.22);
+}
+
+.live-banner[hidden] {
+    display: none;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background-color: #D31C1C;
+    animation: livePulseRing 1.6s infinite;
+}
+
+.live-marker-dot {
+    width: 16px;
+    height: 16px;
+    background-color: #D31C1C;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    animation: livePulseRing 1.6s infinite;
+}
+
+.route-tooltip-live {
+    color: #D31C1C;
+}
+
+@keyframes livePulseRing {
+    0% { box-shadow: 0 0 0 0 rgba(211, 28, 28, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(211, 28, 28, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(211, 28, 28, 0); }
+}
+
+.route-tooltip::before {
+    border-top-color: var(--golden-yellow) !important;
 }
 
 /* CSS lightbox (keep for when routes return) */
@@ -581,6 +1013,10 @@
     .sleigh-routes h2 {
         font-size: 2rem;
     }
+
+    #route-map {
+        height: 320px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -617,4 +1053,97 @@
     .sponsor-perks {
         grid-template-columns: 1fr;
     }
+}
+
+/* ---------------------------
+   FAQ & SAFETY ACCORDION
+---------------------------- */
+.faq-section {
+    background-color: var(--black);
+    padding: 5rem 0 6rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.faq-head {
+    margin: 0 0 2.5rem;
+    text-align: center;
+}
+
+.faq-eyebrow {
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    color: var(--golden-yellow);
+    text-transform: uppercase;
+    margin: 0 0 0.6rem;
+}
+
+.faq-title {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    margin: 0;
+}
+
+.faq-title .text-gold {
+    display: block;
+    font-size: 0.44em;
+    margin-top: 0.35em;
+}
+
+.faq-list {
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.faq-q {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    text-align: left;
+    padding: 1.25rem 0;
+    color: var(--white);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.faq-q:hover {
+    color: var(--golden-yellow);
+}
+
+.faq-chev {
+    color: var(--golden-yellow);
+    font-size: 1.4rem;
+    flex: 0 0 auto;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.faq-item.open .faq-chev {
+    transform: rotate(180deg);
+}
+
+.faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-a-inner {
+    padding: 0 0 1.5rem;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.95rem;
+    line-height: 1.75;
 }

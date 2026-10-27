@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santa's Sleigh | Lancaster Round Table</title>
+    <meta name="description" content="Every December, Lancaster Round Table brings Santa's Sleigh to the streets of Lancaster and the surrounding villages, raising thousands for local causes. See routes and how to donate.">
+
+    <link rel="icon" type="image/png" href="images/RTLogos/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/RTLogos/apple-touch-icon.png">
+
+    <link rel="canonical" href="https://lancaster-roundtable.co.uk/santas-sleigh.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lancaster-roundtable.co.uk/santas-sleigh.html">
+    <meta property="og:title" content="Santa's Sleigh | Lancaster Round Table">
+    <meta property="og:description" content="Every December, Lancaster Round Table brings Santa's Sleigh to the streets of Lancaster and the surrounding villages, raising thousands for local causes.">
+    <meta property="og:image" content="https://lancaster-roundtable.co.uk/images/SleighPhotos/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8543ef25-5404-4796-aa72-9b1f2a790d1d"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
 
     <link rel="stylesheet" href="Styles/base.css">
     <link rel="stylesheet" href="Styles/layout.css">
     <link rel="stylesheet" href="Styles/santas-sleigh.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
 
@@ -33,6 +51,8 @@
     </div>
 </header>
 
+<main>
+
 <!-- PAGE HERO -->
 <section class="sleigh-hero">
     <div class="container">
@@ -45,6 +65,13 @@
         <div class="cta-buttons">
             <a href="https://pay.sumup.com/b2c/QFAI9ZD3" class="btn btn-primary" target="_blank" rel="noopener">Donate Now</a>
             <a href="mailto:lancaster@roundtable.org.uk?subject=Santa%20Sleigh%20Get%20Involved" class="btn btn-secondary">Get Involved</a>
+        </div>
+
+        <div class="headline-sponsor">
+            <p class="headline-sponsor-label">2026 Headline Sponsor</p>
+            <a href="https://www.hengst.com/en/home-page" target="_blank" rel="noopener" class="headline-sponsor-link" title="Visit Hengst Filtration">
+                <img src="images/SleighSupport/HeadlineSponsor/Hengst.png" alt="Hengst Filtration logo" class="headline-sponsor-logo">
+            </a>
         </div>
     </div>
 </section>
@@ -118,31 +145,47 @@
 
 <!-- GOLD BAND -->
 <div class="gold-band">
-    <p>ROUTES &amp; SCHEDULE &bull; COMING SOON FOR CHRISTMAS 2026</p>
+    <p>ROUTES &amp; SCHEDULE &bull; DATES CONFIRMED FOR CHRISTMAS 2026</p>
 </div>
 
-<!-- ROUTES SECTION (coming soon) -->
+<!-- ROUTES SECTION -->
 <section class="sleigh-routes">
     <div class="container">
         <p class="sleigh-label reveal">DECEMBER 2026</p>
         <h2 class="reveal" data-delay="0.1">Santa Sleigh Routes</h2>
-        <p class="routes-intro reveal" data-delay="0.2">We are working hard to prepare the Santa Sleigh routes for the 2026 Christmas season. Please check back soon for the full schedule and route maps!</p>
+        <p class="routes-intro reveal" data-delay="0.2" id="routes-coming-soon">Dates for every route are confirmed for the 2026 Christmas season — see the full schedule below. Interactive route maps will appear here closer to the time.</p>
 
-        <!--
-        ROUTES GRID — uncomment when routes are ready
-
-        <div class="route-grid">
-            <div class="route-card">
-                <a href="#zoom-route1"><img src="images/SleighMaps/OverKellet.png"></a>
-                <h3>Over Kellet</h3>
-                <p class="route-date">3rd December 2025</p>
-                <p class="route-time">5:45 PM</p>
+        <div class="address-lookup reveal" data-delay="0.15" id="address-lookup" hidden>
+            <label for="address-lookup-input">Find out when Santa's coming to your street</label>
+            <div class="address-lookup-row">
+                <input type="text" id="address-lookup-input" placeholder="Enter your postcode or street" autocomplete="off">
+                <button type="button" id="address-lookup-btn" class="btn btn-primary">Find My Route</button>
             </div>
-            <div id="zoom-route1" class="css-lightbox">
-                <a href="#"><img src="images/SleighMaps/OverKellet.png"></a>
+            <div id="address-lookup-result" class="address-lookup-result" hidden></div>
+        </div>
+
+        <button type="button" class="live-banner" id="live-banner" hidden>
+            <span class="live-dot"></span> Santa's sleigh is live right now — tap to track him
+        </button>
+
+        <div class="route-picker reveal" data-delay="0.2" id="route-picker" hidden>
+            <div class="route-tabs" id="route-tabs"></div>
+            <div class="route-map-wrap">
+                <div id="route-map"></div>
+                <div class="route-details" id="route-details"></div>
             </div>
         </div>
-        -->
+    </div>
+</section>
+
+<!-- ROUTE SCHEDULE -->
+<section class="route-schedule-section">
+    <div class="container">
+        <p class="sleigh-label reveal">2026 SEASON</p>
+        <h2 class="reveal" data-delay="0.1">Route Schedule</h2>
+        <p class="routes-intro reveal" data-delay="0.2">Every route below is sponsored by a local business who help us make it happen. Tap a route to see it on the map.</p>
+
+        <div class="route-grid reveal" data-delay="0.25" id="route-schedule-grid"></div>
     </div>
 </section>
 
@@ -207,6 +250,85 @@
     </div>
 </section>
 
+<!-- FAQ & SAFETY -->
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-head">
+            <p class="faq-eyebrow reveal">Before you head out</p>
+            <h2 class="faq-title reveal" data-delay="0.05">
+                FAQS &amp; SAFETY
+                <span class="text-gold">EVERYTHING YOU NEED TO KNOW</span>
+            </h2>
+        </div>
+
+        <div class="faq-list reveal" data-delay="0.1">
+
+            <div class="faq-item open">
+                <button class="faq-q" aria-expanded="true">
+                    Does Santa visit every street?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Our routes are a guide rather than a guarantee — things like weather, traffic and how many volunteers we have on the night can all affect the exact path. If Santa's out and about, use the live tracker above to see exactly where he is.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    Why doesn't the sleigh come down my road?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">The sleigh and trailer are a big bit of kit, so tight turns, narrow streets and cul-de-sacs aren't always safe to get down. If you're on one of these, the easiest thing is to meet us at the nearest main road — check the route map for the closest point.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    Can my children get on the sleigh or go up to it?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">For everyone's safety and insurance reasons, nobody is allowed on the sleigh or trailer at any point. Please keep an eye on little ones near the road, especially in the dark — feel free to grab photos from the pavement.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    Where does the money raised go?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">Every penny goes back into the Lancaster district — supporting the volunteer groups who help us run the sleigh each year, plus other local causes throughout the district.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    How do I donate?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">You can donate online any time using the Donate Now button on this page, or hand it to one of our collectors when the sleigh comes past. Every bit helps, however big or small.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                    Can I volunteer or get involved?
+                    <span class="faq-chev" aria-hidden="true">&#8964;</span>
+                </button>
+                <div class="faq-a">
+                    <div class="faq-a-inner">We're always looking for extra hands for collections, route support and more. Drop us a message using the Get Involved button and we'll let you know what's needed.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
 <!-- FOOTER -->
 <footer>
     <div class="footer-inner container">
@@ -215,7 +337,7 @@
             <p>Ignite your social life. Do More.</p>
         </div>
         <div class="footer-contact">
-            <h4 class="footer-heading">Get in Touch</h4>
+            <h3 class="footer-heading">Get in Touch</h3>
             <p><a href="mailto:lancaster@roundtable.org.uk">lancaster@roundtable.org.uk</a></p>
             <p><a href="https://wa.me/447587673518">07587 673518</a></p>
             <div class="social-icons">
@@ -234,6 +356,7 @@
 </footer>
 
 <!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
     const navToggle = document.getElementById('nav-toggle');
     const mainNav = document.getElementById('main-nav');
@@ -279,6 +402,601 @@
 
     const impactStats = document.querySelector('.impact-stats');
     if (impactStats) statsObserver.observe(impactStats);
+
+    // Santa Sleigh Routes — add an entry here and drop the matching GPX file
+    // into images/SleighMaps/routes/ to switch the "coming soon" message for
+    // a live, selectable route map. See images/SleighMaps/routes/README.md
+    //
+    // All routes below are real, exported from gpx.studio. A `point` (instead
+    // of `gpx`) drops a single static pin rather than a line — used for
+    // Morecambe FC, which isn't a moving route.
+    const SLEIGH_ROUTES = [
+        { id: 'bolton-le-sands-south', name: 'Bolton-le-Sands South', date: '2nd December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/bolton-le-sands-south.gpx' },
+        { id: 'silverdale', name: 'Silverdale', date: '4th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/silverdale.gpx' },
+        { id: 'quernmore-road-estates', name: 'Quernmore Road Estates (Lancaster)', date: '6th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/quernmore-road-estates.gpx' },
+        { id: 'warton', name: 'Warton', date: '7th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/warton.gpx' },
+        { id: 'carnforth', name: 'Carnforth', date: '9th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/carnforth.gpx' },
+        { id: 'bolton-le-sands-north', name: 'Bolton-le-Sands North', date: '10th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/bolton-le-sands-north.gpx' },
+        { id: 'caton', name: 'Caton', date: '12th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/caton.gpx' },
+        { id: 'halton', name: 'Halton', date: '15th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/halton.gpx' },
+        { id: 'heysham', name: 'Heysham', date: '16th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/heysham.gpx' },
+        { id: 'morecambe-fc', name: 'Morecambe FC (Static)', date: '19th December 2026', time: 'Time TBC', point: [54.0611, -2.8672] }, // just in front of the Mazuma Stadium, Christie Way
+        { id: 'hest-bank', name: 'Hest Bank', date: '20th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/hest-bank.gpx' },
+    ];
+
+    const routeTabButtons = {}; // populated by initRoutePicker: route id -> tab button element
+    let sharedMap = null; // populated by initRoutePicker: the Leaflet map instance, used by live tracking below
+
+    function parseGpxToLatLngs(gpxText) {
+        const xml = new DOMParser().parseFromString(gpxText, 'application/xml');
+        const points = [...xml.querySelectorAll('trkpt, rtept')];
+        return points.map(pt => [parseFloat(pt.getAttribute('lat')), parseFloat(pt.getAttribute('lon'))]);
+    }
+
+    // Order of points in the GPX defines direction of travel (first = start).
+    function haversineMetres(a, b) {
+        const R = 6371000;
+        const toRad = d => d * Math.PI / 180;
+        const dLat = toRad(b[0] - a[0]);
+        const dLon = toRad(b[1] - a[1]);
+        const h = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(a[0])) * Math.cos(toRad(b[0])) * Math.sin(dLon / 2) ** 2;
+        return 2 * R * Math.asin(Math.sqrt(h));
+    }
+
+    // Purely decorative: a subtle frost tint + falling snow over the map.
+    // Both are pointer-events:none so they never interfere with the map itself.
+    function initMapFestiveEffects() {
+        const wrap = document.querySelector('.route-map-wrap');
+        const mapEl = document.getElementById('route-map');
+        if (!wrap || !mapEl) return;
+
+        const frost = document.createElement('div');
+        frost.className = 'route-map-frost';
+        wrap.appendChild(frost);
+
+        const canvas = document.createElement('canvas');
+        canvas.className = 'route-map-snow';
+        wrap.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = wrap.clientWidth;
+            canvas.height = mapEl.clientHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const flakes = Array.from({ length: 50 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: 1 + Math.random() * 2.2,
+            speed: 0.4 + Math.random() * 0.9,
+            phase: Math.random() * Math.PI * 2
+        }));
+
+        function tick() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255,255,255,0.85)';
+            flakes.forEach(f => {
+                f.y += f.speed;
+                f.x += Math.sin(f.phase + f.y * 0.01) * 0.4;
+                if (f.y > canvas.height) { f.y = -4; f.x = Math.random() * canvas.width; }
+                if (f.x > canvas.width) f.x -= canvas.width;
+                if (f.x < 0) f.x += canvas.width;
+                ctx.beginPath();
+                ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(tick);
+        }
+        tick();
+    }
+
+    function initRoutePicker(routes) {
+        const comingSoon = document.getElementById('routes-coming-soon');
+        const picker = document.getElementById('route-picker');
+        const tabsEl = document.getElementById('route-tabs');
+        const detailsEl = document.getElementById('route-details');
+
+        comingSoon.hidden = true;
+        picker.hidden = false;
+
+        const map = L.map('route-map', { scrollWheelZoom: false });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+        sharedMap = map;
+        initMapFestiveEffects();
+
+        let currentLineBase = null;
+        let currentTrail = null;
+        let sleighMarker = null;
+        let currentMarkers = [];
+        let animGeneration = 0; // bumped on every showRoute() call so a stale animation loop from the previous route knows to stop
+
+        // The artwork faces left (front/curl on the left side of the image),
+        // i.e. a compass bearing of 270 (West) at its default, unrotated state.
+        // Kept upright and facing the same way throughout — only its position
+        // moves. No flipping or tilting to track direction of travel.
+        const SLEIGH_ICON_HTML = `<img src="images/SleighMaps/sleigh-icon.png" width="38" height="26" alt="">`;
+
+        // Drives the sleigh marker and its growing snow trail along the route.
+        // Speed is paced in screen pixels per second rather than real-world
+        // metres per second, and the route's current on-screen pixel length is
+        // re-measured every frame — so zooming in (which spreads the same
+        // route over more pixels) doesn't make it fly across the screen, and
+        // zooming out doesn't make it crawl. Pauses at the end, then resets
+        // and loops. myGeneration lets a leftover loop from a previously-
+        // selected route notice a newer one has taken over and stop itself,
+        // instead of relying only on timing around when its layers get
+        // removed from the map.
+        function animateSleigh(latlngs, myGeneration) {
+            const cumulative = [0];
+            for (let i = 1; i < latlngs.length; i++) {
+                cumulative.push(cumulative[i - 1] + haversineMetres(latlngs[i - 1], latlngs[i]));
+            }
+            const totalDistance = cumulative[cumulative.length - 1];
+            if (!totalDistance) return;
+
+            const PIXELS_PER_SECOND = 90;
+            const gapMs = 2500;
+
+            function pointAtDistance(dist) {
+                if (dist >= totalDistance) return { point: latlngs[latlngs.length - 1], segIndex: latlngs.length - 2 };
+                let i = 1;
+                while (cumulative[i] < dist) i++;
+                const segStart = cumulative[i - 1], segEnd = cumulative[i];
+                const t = (dist - segStart) / (segEnd - segStart || 1);
+                const a = latlngs[i - 1], b = latlngs[i];
+                return { point: [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t], segIndex: i - 1 };
+            }
+
+            // The route's current on-screen length, in pixels, at whatever zoom
+            // the map happens to be at right now. Computed directly from the
+            // map's projection rather than reading the rendered SVG path's
+            // length — Leaflet simplifies (drops points from) polylines more
+            // aggressively the further zoomed out it is, which was quietly
+            // shortening the measured length at low zoom and made the sleigh
+            // creep faster than intended when zoomed out.
+            function currentPixelLength() {
+                let total = 0;
+                let prev = map.latLngToLayerPoint(latlngs[0]);
+                for (let i = 1; i < latlngs.length; i++) {
+                    const cur = map.latLngToLayerPoint(latlngs[i]);
+                    total += prev.distanceTo(cur);
+                    prev = cur;
+                }
+                return total || null;
+            }
+
+            let progress = 0; // 0..1 fraction of the route completed so far
+            let paused = false;
+            let pauseElapsedMs = 0;
+            let lastFrameTime = null;
+
+            function frame(now) {
+                if (myGeneration !== animGeneration) return; // a newer route has taken over
+                const deltaMs = lastFrameTime === null ? 0 : now - lastFrameTime;
+                lastFrameTime = now;
+
+                if (!paused) {
+                    const pxLength = currentPixelLength();
+                    if (pxLength) progress += (PIXELS_PER_SECOND * (deltaMs / 1000)) / pxLength;
+
+                    if (progress >= 1) {
+                        progress = 1;
+                        paused = true;
+                        pauseElapsedMs = 0;
+                    }
+
+                    const { point, segIndex } = pointAtDistance(progress * totalDistance);
+                    currentTrail.setLatLngs(latlngs.slice(0, segIndex + 1).concat([point]));
+                    if (sleighMarker) sleighMarker.setLatLng(point);
+                } else {
+                    pauseElapsedMs += deltaMs;
+                    if (pauseElapsedMs >= gapMs) {
+                        paused = false;
+                        progress = 0;
+                        currentTrail.setLatLngs([]);
+                        if (sleighMarker) sleighMarker.setLatLng(latlngs[0]);
+                    }
+                }
+
+                requestAnimationFrame(frame);
+            }
+
+            requestAnimationFrame(frame);
+        }
+
+        function showRoute(route, tabEl) {
+            tabsEl.querySelectorAll('.route-tab').forEach(t => t.classList.remove('active'));
+            tabEl.classList.add('active');
+
+            detailsEl.innerHTML = `<h3>${route.name}</h3><span class="route-when">${[route.date, route.time].filter(Boolean).join(' &bull; ')}</span>`;
+
+            animGeneration++;
+            if (currentLineBase) { map.removeLayer(currentLineBase); currentLineBase = null; }
+            if (currentTrail) { map.removeLayer(currentTrail); currentTrail = null; }
+            if (sleighMarker) { map.removeLayer(sleighMarker); sleighMarker = null; }
+            currentMarkers.forEach(m => map.removeLayer(m));
+            currentMarkers = [];
+
+            // A fixed location (e.g. a grotto that doesn't move) instead of a moving route.
+            if (route.point) {
+                const pinIcon = L.divIcon({
+                    className: 'route-pin',
+                    html: '<div class="route-pin-dot"></div>',
+                    iconSize: [20, 20],
+                    iconAnchor: [10, 10]
+                });
+                const pinMarker = L.marker(route.point, { icon: pinIcon })
+                    .bindTooltip('SANTA IS HERE', { permanent: true, direction: 'top', className: 'route-tooltip route-tooltip-pin', offset: [0, -8] })
+                    .addTo(map);
+                currentMarkers.push(pinMarker);
+                map.setView(route.point, 16);
+                return;
+            }
+
+            fetch(route.gpx, { cache: 'no-cache' })
+                .then(res => res.text())
+                .then(gpxText => {
+                    const latlngs = parseGpxToLatLngs(gpxText);
+                    if (!latlngs.length) return;
+
+                    // A dim, solid line previewing the whole route (always visible),
+                    // a bright snow-white trail that grows behind the sleigh as it
+                    // travels, and the sleigh itself doing the traveling.
+                    currentLineBase = L.polyline(latlngs, {
+                        color: '#FBAF33', weight: 3.5, opacity: 0.6,
+                        className: 'route-line-base'
+                    }).addTo(map);
+
+                    currentTrail = L.polyline([], {
+                        color: '#EAF4FF', weight: 4, opacity: 0.9,
+                        className: 'route-line-trail'
+                    }).addTo(map);
+
+                    const sleighIcon = L.divIcon({
+                        className: 'sleigh-marker',
+                        html: `<div class="sleigh-icon-wrap">${SLEIGH_ICON_HTML}</div>`,
+                        iconSize: [38, 26],
+                        iconAnchor: [19, 13]
+                    });
+                    sleighMarker = L.marker(latlngs[0], { icon: sleighIcon, interactive: false }).addTo(map);
+
+                    animateSleigh(latlngs, animGeneration);
+
+                    // A route that finishes back where it started (a loop) needs a single
+                    // combined marker — two stacked tooltips on the same point just hide each other.
+                    const isLoop = haversineMetres(latlngs[0], latlngs[latlngs.length - 1]) < 25;
+
+                    if (isLoop) {
+                        const loopMarker = L.circleMarker(latlngs[0], { radius: 8, weight: 2, color: '#FBAF33', fillColor: '#1D1D1A', fillOpacity: 1 })
+                            .bindTooltip('START / FINISH', { permanent: true, direction: 'top', className: 'route-tooltip route-tooltip-loop', offset: [0, -6] })
+                            .addTo(map);
+                        currentMarkers.push(loopMarker);
+                    } else {
+                        const startMarker = L.circleMarker(latlngs[0], { radius: 8, weight: 2, color: '#1D1D1A', fillColor: '#FBAF33', fillOpacity: 1 })
+                            .bindTooltip('START', { permanent: true, direction: 'top', className: 'route-tooltip route-tooltip-start', offset: [0, -6] })
+                            .addTo(map);
+                        const finishMarker = L.circleMarker(latlngs[latlngs.length - 1], { radius: 8, weight: 2, color: '#FBAF33', fillColor: '#1D1D1A', fillOpacity: 1 })
+                            .bindTooltip('FINISH', { permanent: true, direction: 'top', className: 'route-tooltip route-tooltip-finish', offset: [0, -6] })
+                            .addTo(map);
+                        currentMarkers.push(startMarker, finishMarker);
+                    }
+
+                    map.fitBounds(currentLineBase.getBounds(), { padding: [24, 48] });
+                });
+        }
+
+        routes.forEach((route, i) => {
+            const tab = document.createElement('button');
+            tab.type = 'button';
+            tab.className = 'route-tab';
+            tab.textContent = route.name;
+            tab.addEventListener('click', () => showRoute(route, tab));
+            tabsEl.appendChild(tab);
+            routeTabButtons[route.id] = tab;
+            if (i === 0) showRoute(route, tab);
+        });
+    }
+
+    if (SLEIGH_ROUTES.length) {
+        initRoutePicker(SLEIGH_ROUTES);
+    }
+
+    // Scrolls to the map above and selects a route's tab, if that route's
+    // GPX has been added to SLEIGH_ROUTES yet.
+    function goToRouteOnMap(id) {
+        const tab = routeTabButtons[id];
+        const picker = document.getElementById('route-picker');
+        if (!tab || picker.hidden) return;
+        picker.scrollIntoView({ block: 'start' });
+        tab.click();
+    }
+
+    // Route Schedule — dates/times are known ahead of the map data itself,
+    // so this renders independently of SLEIGH_ROUTES. `id` should match the
+    // matching SLEIGH_ROUTES entry above once that route's GPX is added, so
+    // the "View Route" button lights up automatically.
+    // Placeholder sponsor logo until each route has a real sponsor assigned —
+    // swap per-route via the `sponsor` field, see images/SleighSupport/RouteSponsors/README.md
+    const PLACEHOLDER_SPONSOR = { name: 'Lancaster Round Table', logo: 'images/RTLogos/LancasterRTLogo.png', url: 'https://www.facebook.com/Lancaster160/', isPlaceholder: true };
+
+    const ROUTE_SCHEDULE = [
+        { id: 'bolton-le-sands-south', name: 'Bolton-le-Sands South', date: '2nd December 2026', dateISO: '2026-12-02', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'silverdale', name: 'Silverdale', date: '4th December 2026', dateISO: '2026-12-04', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'quernmore-road-estates', name: 'Quernmore Road Estates (Lancaster)', date: '6th December 2026', dateISO: '2026-12-06', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'warton', name: 'Warton', date: '7th December 2026', dateISO: '2026-12-07', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'carnforth', name: 'Carnforth', date: '9th December 2026', dateISO: '2026-12-09', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'bolton-le-sands-north', name: 'Bolton-le-Sands North', date: '10th December 2026', dateISO: '2026-12-10', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'caton', name: 'Caton', date: '12th December 2026', dateISO: '2026-12-12', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'halton', name: 'Halton', date: '15th December 2026', dateISO: '2026-12-15', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'heysham', name: 'Heysham', date: '16th December 2026', dateISO: '2026-12-16', time: 'Time TBC',
+            sponsor: { name: "Harry's Brunch Bar", logo: 'images/SleighSupport/RouteSponsors/Harrys.png',
+                       url: 'https://www.facebook.com/harrysbarmorecambe/?locale=en_GB' } },
+        { id: 'morecambe-fc', name: 'Morecambe FC (Static)', date: '19th December 2026', dateISO: '2026-12-19', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'hest-bank', name: 'Hest Bank', date: '20th December 2026', dateISO: '2026-12-20', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        {
+            id: 'give-back-community-day', name: 'Give Back Community Day', date: '21st December 2026',
+            isBidding: true,
+            bidFormUrl: null, // e.g. a Google Form link — falls back to a mailto enquiry until set
+            winningBid: null  // once decided: { sponsorName: 'Acme Ltd', details: 'What they won and why' }
+        },
+    ];
+
+    function renderRouteSchedule(routes) {
+        const grid = document.getElementById('route-schedule-grid');
+        if (!grid) return;
+
+        grid.innerHTML = routes.map(route => {
+            const sponsor = route.sponsor;
+            const sponsorLinkOpen = sponsor && sponsor.url ? `<a href="${sponsor.url}" target="_blank" rel="noopener" title="Visit ${sponsor.name}">` : '';
+            const sponsorLinkClose = sponsor && sponsor.url ? '</a>' : '';
+
+            const sponsorLogo = sponsor && sponsor.logo
+                ? `<div class="route-sponsor-logo">${sponsorLinkOpen}<img src="${sponsor.logo}" alt="${sponsor.name} logo">${sponsorLinkClose}</div>`
+                : '';
+            const sponsorLine = sponsor && sponsor.isPlaceholder
+                ? 'Sponsorship available'
+                : sponsor && sponsor.name
+                    ? `Sponsored by ${sponsorLinkOpen}${sponsor.name}${sponsorLinkClose}`
+                    : 'Sponsor to be announced';
+
+            let actionHtml;
+            if (route.isBidding) {
+                actionHtml = route.winningBid
+                    ? `<p class="route-bid-result">This year's slot goes to <strong>${route.winningBid.sponsorName}</strong>${route.winningBid.details ? ` — ${route.winningBid.details}` : ''}</p>`
+                    : `<a class="btn btn-secondary route-view-btn" href="${route.bidFormUrl || 'mailto:lancaster@roundtable.org.uk?subject=Give%20Back%20Community%20Day%20Bid'}" ${route.bidFormUrl ? 'target="_blank" rel="noopener"' : ''}>Submit a Bid</a>`;
+            } else {
+                const mapReady = !!routeTabButtons[route.id];
+                actionHtml = `<button type="button" class="btn btn-secondary route-view-btn" ${mapReady ? '' : 'disabled title="Route map coming soon"'} onclick="goToRouteOnMap('${route.id}')">View Route</button>`;
+            }
+
+            return `
+                <div class="route-card${route.isBidding ? ' route-card-bidding' : ''}">
+                    <div class="route-card-top">
+                        <div class="route-card-info">
+                            <h3>${route.name}</h3>
+                            <p class="route-date">${route.date}</p>
+                            ${route.time ? `<p class="route-time">${route.time}</p>` : ''}
+                        </div>
+                        ${sponsorLogo}
+                    </div>
+                    ${route.isBidding ? '' : `<p class="route-sponsor-name">${sponsorLine}</p>`}
+                    ${actionHtml}
+                </div>
+            `;
+        }).join('');
+    }
+
+    renderRouteSchedule(ROUTE_SCHEDULE);
+
+    // Address Lookup — geocodes what the visitor types, then finds whichever
+    // route's path passes closest to them. Works well here because each
+    // route covers a distinct village rather than several routes crossing
+    // the same streets — "nearest route" is a reliable stand-in for "your
+    // route" without needing a maintained street list per route.
+    const routeLatLngCache = {};
+
+    async function getRouteLatLngs(route) {
+        if (routeLatLngCache[route.id]) return routeLatLngCache[route.id];
+        const latlngs = route.point ? [route.point] : parseGpxToLatLngs(await (await fetch(route.gpx, { cache: 'no-cache' })).text());
+        routeLatLngCache[route.id] = latlngs;
+        return latlngs;
+    }
+
+    const UK_POSTCODE_RE = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+
+    async function geocodeAddress(query) {
+        const trimmed = query.trim();
+        if (UK_POSTCODE_RE.test(trimmed)) {
+            const res = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(trimmed)}`);
+            if (res.ok) {
+                const data = await res.json();
+                if (data.status === 200) return { lat: data.result.latitude, lng: data.result.longitude };
+            }
+        }
+        // Free-text fallback, biased to the Lancaster district so e.g. "Warton" or
+        // "Main Street" resolves locally rather than to a same-named place elsewhere.
+        const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=gb&viewbox=-3.05,54.25,-2.55,53.95&bounded=1&q=${encodeURIComponent(trimmed + ', Lancaster')}`);
+        if (!res.ok) return null;
+        const results = await res.json();
+        return results.length ? { lat: parseFloat(results[0].lat), lng: parseFloat(results[0].lon) } : null;
+    }
+
+    function formatCountdown(dateISO) {
+        if (!dateISO) return '';
+        const target = new Date(dateISO + 'T17:00:00');
+        const days = Math.ceil((target - new Date()) / 86400000);
+        if (days < 0) return 'This route has already been out this year';
+        if (days === 0) return "Santa's out tonight!";
+        if (days === 1) return '1 day to go';
+        return `${days} days to go`;
+    }
+
+    async function findNearestRoute(userLatLng) {
+        const MAX_DISTANCE_M = 20000;
+        let best = null;
+        for (const route of SLEIGH_ROUTES) {
+            const latlngs = await getRouteLatLngs(route);
+            let minDist = Infinity;
+            for (const p of latlngs) {
+                const d = haversineMetres(userLatLng, p);
+                if (d < minDist) minDist = d;
+            }
+            if (!best || minDist < best.dist) best = { route, dist: minDist };
+        }
+        return best && best.dist <= MAX_DISTANCE_M ? best : null;
+    }
+
+    function initAddressLookup() {
+        const section = document.getElementById('address-lookup');
+        const input = document.getElementById('address-lookup-input');
+        const btn = document.getElementById('address-lookup-btn');
+        const resultEl = document.getElementById('address-lookup-result');
+        if (!section) return;
+        section.hidden = false;
+
+        async function runLookup() {
+            const query = input.value.trim();
+            if (!query) return;
+
+            resultEl.hidden = false;
+            btn.disabled = true;
+            resultEl.className = 'address-lookup-result';
+            resultEl.textContent = 'Searching…';
+
+            try {
+                const userLatLng = await geocodeAddress(query);
+                if (!userLatLng) {
+                    resultEl.className = 'address-lookup-result address-lookup-error';
+                    resultEl.textContent = "We couldn't find that address — try your postcode instead.";
+                    return;
+                }
+
+                const match = await findNearestRoute([userLatLng.lat, userLatLng.lng]);
+                if (!match) {
+                    resultEl.className = 'address-lookup-result address-lookup-error';
+                    resultEl.textContent = "We don't have a route near that address yet — check back closer to December.";
+                    return;
+                }
+
+                const schedule = ROUTE_SCHEDULE.find(r => r.id === match.route.id);
+                const mapReady = !!routeTabButtons[match.route.id];
+                resultEl.className = 'address-lookup-result address-lookup-success';
+                resultEl.innerHTML = `
+                    <p class="address-lookup-route-name">${match.route.name}</p>
+                    <p class="address-lookup-countdown">${formatCountdown(schedule && schedule.dateISO)}</p>
+                    <p class="address-lookup-date">${(schedule && schedule.date) || ''}${schedule && schedule.time ? ' &bull; ' + schedule.time : ''}</p>
+                    <button type="button" class="btn btn-secondary" ${mapReady ? '' : 'disabled'} onclick="goToRouteOnMap('${match.route.id}')">View on Map</button>
+                `;
+            } catch (e) {
+                resultEl.className = 'address-lookup-result address-lookup-error';
+                resultEl.textContent = 'Something went wrong looking that up — please try again.';
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        btn.addEventListener('click', runLookup);
+        input.addEventListener('keydown', (e) => { if (e.key === 'Enter') runLookup(); });
+    }
+
+    if (SLEIGH_ROUTES.length) {
+        initAddressLookup();
+    }
+
+    // Live tracking — set workerUrl once deployed, see live-tracking/README.md.
+    // Independent of SLEIGH_ROUTES: the live marker sits on top of the map
+    // regardless of which route tab is selected, and disappears again if the
+    // beacon goes quiet for more than 90 seconds (see live-tracking/README.md).
+    const LIVE_TRACKING = {
+        workerUrl: 'https://sleig-tracker.lancaster-97e.workers.dev',
+    };
+
+    let liveMarker = null;
+    const liveBannerEl = document.getElementById('live-banner');
+
+    function setLiveBannerVisible(visible) {
+        if (liveBannerEl) liveBannerEl.hidden = !visible;
+    }
+
+    if (liveBannerEl) {
+        liveBannerEl.addEventListener('click', () => {
+            document.getElementById('route-picker').scrollIntoView({ block: 'start' });
+            if (liveMarker && sharedMap) sharedMap.setView(liveMarker.getLatLng(), 16);
+        });
+    }
+
+    async function pollLiveLocation() {
+        try {
+            const res = await fetch(`${LIVE_TRACKING.workerUrl}?t=${Date.now()}`, { cache: 'no-store' });
+            const data = await res.json();
+            const isFresh = data && typeof data.lat === 'number' && (Date.now() - data.ts) < 90000;
+
+            if (isFresh && sharedMap) {
+                const latlng = [data.lat, data.lng];
+                if (!liveMarker) {
+                    const icon = L.divIcon({ className: 'live-marker', html: '<div class="live-marker-dot"></div>', iconSize: [22, 22], iconAnchor: [11, 11] });
+                    liveMarker = L.marker(latlng, { icon, zIndexOffset: 1000 })
+                        .bindTooltip('SANTA', { permanent: true, direction: 'top', className: 'route-tooltip route-tooltip-live', offset: [0, -10] })
+                        .addTo(sharedMap);
+                } else {
+                    liveMarker.setLatLng(latlng);
+                }
+                setLiveBannerVisible(true);
+            } else {
+                if (liveMarker && sharedMap) { sharedMap.removeLayer(liveMarker); liveMarker = null; }
+                setLiveBannerVisible(false);
+            }
+        } catch (e) {
+            setLiveBannerVisible(false);
+        }
+    }
+
+    if (LIVE_TRACKING.workerUrl) {
+        pollLiveLocation();
+        setInterval(pollLiveLocation, 5000);
+    }
+
+    /* ---- FAQ accordion ---- */
+    function measureHeight(el) {
+        el.style.maxHeight = 'none';
+        el.style.overflow = 'visible';
+        var h = el.scrollHeight;
+        el.style.maxHeight = null;
+        el.style.overflow = null;
+        return h;
+    }
+
+    window.addEventListener('load', function() {
+        requestAnimationFrame(function() {
+            var openEl = document.querySelector('.faq-item.open .faq-a');
+            if (openEl) openEl.style.maxHeight = measureHeight(openEl) + 'px';
+        });
+    });
+
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = btn.closest('.faq-item');
+            var answer = item.querySelector('.faq-a');
+            var isOpen = item.classList.contains('open');
+
+            document.querySelectorAll('.faq-item').forEach(function(other) {
+                other.classList.remove('open');
+                other.querySelector('.faq-a').style.maxHeight = null;
+                other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.style.maxHeight = measureHeight(answer) + 'px';
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
 </script>
 
 </body>

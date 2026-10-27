@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lancaster Round Table</title>
+    <meta name="description" content="Lancaster Round Table is a social and charitable club for men aged 18–45 in Lancaster. Adventure, friendship and community — get out, do more, give back.">
+
+    <link rel="icon" type="image/png" href="images/RTLogos/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/RTLogos/apple-touch-icon.png">
+
+    <link rel="canonical" href="https://lancaster-roundtable.co.uk/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lancaster-roundtable.co.uk/">
+    <meta property="og:title" content="Lancaster Round Table | Ignite Your Social Life">
+    <meta property="og:description" content="A social and charitable club for men aged 18–45 in Lancaster. Adventure, friendship and community — get out, do more, give back.">
+    <meta property="og:image" content="https://lancaster-roundtable.co.uk/images/RTLogos/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8543ef25-5404-4796-aa72-9b1f2a790d1d"></script>
 
     <!-- CSS Files -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+
     <link rel="stylesheet" href="Styles/base.css">   <!-- fonts & colors -->
     <link rel="stylesheet" href="Styles/layout.css"> <!-- header/nav & footer -->
     <link rel="stylesheet" href="Styles/index.css">   <!-- index page styles -->
@@ -39,6 +56,8 @@
         </nav>
     </div>
 </header>
+
+<main>
 
 <!-- HERO (video background + text overlay) -->
 <section class="hero">
@@ -84,7 +103,7 @@
                         <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
                     </svg>
                 </div>
-                <h4>Adventure</h4>
+                <h3>Adventure</h3>
                 <p>From axe throwing and motorsport to escape rooms and archery, no two meetings are the same. We do things that are genuinely fun, push you out of your comfort zone and leave you with a story worth telling.</p>
             </div>
             <div class="pillar reveal" data-delay="0.25">
@@ -96,7 +115,7 @@
                         <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
                     </svg>
                 </div>
-                <h4>Friendship</h4>
+                <h3>Friendship</h3>
                 <p>The best friendships form when you're doing something daft together on a Thursday night. Round Table is a group of lads from all walks of life, different jobs, different backgrounds, same sense of humour.</p>
             </div>
             <div class="pillar reveal" data-delay="0.4">
@@ -108,7 +127,7 @@
                         <path d="m15 18-2-2"/>
                     </svg>
                 </div>
-                <h4>Community</h4>
+                <h3>Community</h3>
                 <p>We run Santa's Sleigh every Christmas, raise money for local causes and show up where it matters. Being part of Round Table means what you do has an impact beyond just a good night out.</p>
             </div>
         </div>
@@ -121,16 +140,6 @@
         <img src="images/RTLogos/hohoho.png" alt="Ho Ho Ho" class="sleigh-logo reveal" data-delay="0">
         <h2 class="reveal" data-delay="0.1">SANTA'S SLEIGH</h2>
         <p class="sleigh-copy reveal" data-delay="0.2">You've seen the sleigh. Now meet the club behind it. Every December we take to the streets of Lancaster, bring thousands of people together and raise money for the local causes that need it most — all powered by a group of lads who just want to make Christmas a little more magical.</p>
-        <div class="sleigh-stats reveal" data-delay="0.3">
-            <div class="sleigh-stat">
-                <span class="stat-num" data-target="5300" data-prefix="£" data-suffix="+">£0</span>
-                <p>Raised for local causes</p>
-            </div>
-            <div class="sleigh-stat">
-                <span class="stat-num" data-target="2000" data-prefix="£" data-suffix="+">£0</span>
-                <p>Donated to volunteer groups</p>
-            </div>
-        </div>
         <div class="cta-buttons reveal" data-delay="0.4">
             <a href="santas-sleigh.html" class="btn btn-primary">Routes &amp; More</a>
             <a href="https://pay.sumup.com/b2c/QFAI9ZD3" class="btn btn-secondary" target="_blank" rel="noopener">Donate Now</a>
@@ -181,6 +190,8 @@
     </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
     <div class="footer-inner container">
@@ -189,7 +200,7 @@
             <p>Ignite your social life. Do More.</p>
         </div>
         <div class="footer-contact">
-            <h4 class="footer-heading">Get in Touch</h4>
+            <h3 class="footer-heading">Get in Touch</h3>
             <p><a href="mailto:lancaster@roundtable.org.uk">lancaster@roundtable.org.uk</a></p>
             <p><a href="https://wa.me/447587673518">07587 673518</a></p>
             <div class="social-icons">
@@ -226,37 +237,6 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // Animated counters
-    function animateCounter(el) {
-        const target = parseInt(el.dataset.target, 10);
-        const prefix = el.dataset.prefix || '';
-        const suffix = el.dataset.suffix || '';
-        const duration = 2000;
-        const startTime = performance.now();
-
-        function tick(now) {
-            const progress = Math.min((now - startTime) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const value = Math.floor(eased * target);
-            el.textContent = prefix + value.toLocaleString() + (progress >= 1 ? suffix : '');
-            if (progress < 1) requestAnimationFrame(tick);
-        }
-
-        requestAnimationFrame(tick);
-    }
-
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.querySelectorAll('.stat-num').forEach(animateCounter);
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.4 });
-
-    const sleighStats = document.querySelector('.sleigh-stats');
-    if (sleighStats) statsObserver.observe(sleighStats);
 </script>
 
 </body>

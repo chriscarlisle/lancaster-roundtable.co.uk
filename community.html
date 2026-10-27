@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community | Lancaster Round Table</title>
+    <meta name="description" content="See how Lancaster Round Table gives back to the local area — from Santa's Sleigh and Galgate Treat Day to Remembrance Day, volunteering and fundraising for local causes.">
+
+    <link rel="icon" type="image/png" href="images/RTLogos/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/RTLogos/apple-touch-icon.png">
+
+    <link rel="canonical" href="https://lancaster-roundtable.co.uk/community.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lancaster-roundtable.co.uk/community.html">
+    <meta property="og:title" content="Community | Lancaster Round Table">
+    <meta property="og:description" content="See how Lancaster Round Table gives back to the local area — volunteering, fundraising and supporting local causes across Lancaster.">
+    <meta property="og:image" content="https://lancaster-roundtable.co.uk/images/RTLogos/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8543ef25-5404-4796-aa72-9b1f2a790d1d"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
 
     <link rel="stylesheet" href="Styles/base.css">
     <link rel="stylesheet" href="Styles/layout.css">
@@ -32,6 +49,8 @@
         </nav>
     </div>
 </header>
+
+<main>
 
 <!-- PAGE HERO -->
 <section class="community-hero">
@@ -104,6 +123,21 @@
     <p>VOLUNTEERING &bull; FUNDRAISING &bull; MAKING A DIFFERENCE</p>
 </div>
 
+<!-- COMMUNITY IMPACT -->
+<section class="community-impact">
+    <div class="container">
+        <p class="impact-year reveal">2026 SO FAR</p>
+        <h2 class="impact-heading reveal" data-delay="0.05">OUR IMPACT</h2>
+        <div class="impact-stats reveal" data-delay="0.1">
+            <div class="impact-stat">
+                <span class="impact-num" data-target="3000" data-prefix="£" data-suffix="+">£0</span>
+                <p>Given in support of local causes this year</p>
+            </div>
+        </div>
+        <p class="impact-desc reveal" data-delay="0.2">From Galgate Treat Day to Santa's Sleigh, every event and every donation goes straight back into supporting the Lancaster community.</p>
+    </div>
+</section>
+
 <!-- COMMUNITY SUPPORT REQUEST -->
 <section class="support-section">
     <div class="container">
@@ -127,6 +161,8 @@
     </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
     <div class="footer-inner container">
@@ -135,7 +171,7 @@
             <p>Ignite your social life. Do More.</p>
         </div>
         <div class="footer-contact">
-            <h4 class="footer-heading">Get in Touch</h4>
+            <h3 class="footer-heading">Get in Touch</h3>
             <p><a href="mailto:lancaster@roundtable.org.uk">lancaster@roundtable.org.uk</a></p>
             <p><a href="https://wa.me/447587673518">07587 673518</a></p>
             <div class="social-icons">
@@ -170,6 +206,35 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Animated counters
+    function animateCounter(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        const duration = 2000;
+        const startTime = performance.now();
+        function tick(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.floor(eased * target);
+            el.textContent = prefix + value.toLocaleString() + (progress >= 1 ? suffix : '');
+            if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.impact-num').forEach(animateCounter);
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    const impactStats = document.querySelector('.impact-stats');
+    if (impactStats) statsObserver.observe(impactStats);
 </script>
 
 </body>

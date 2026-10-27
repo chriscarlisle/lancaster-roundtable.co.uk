@@ -124,6 +124,66 @@
 }
 
 /* ---------------------------
+   COMMUNITY IMPACT
+---------------------------- */
+.community-impact {
+    background-color: var(--table-grey);
+    padding: 6rem 1rem;
+    text-align: center;
+}
+
+.community-impact .impact-year {
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+    color: var(--golden-yellow);
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+}
+
+.community-impact .impact-heading {
+    font-size: 5rem;
+    line-height: 1.05;
+    margin-bottom: 3rem;
+}
+
+.community-impact .impact-stats {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.community-impact .impact-stat {
+    text-align: center;
+}
+
+.community-impact .impact-num {
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 3.75rem;
+    color: var(--golden-yellow);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+
+.community-impact .impact-stat p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    margin: 0.75rem 0 0;
+}
+
+.community-impact .impact-desc {
+    max-width: 640px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    font-style: italic;
+}
+
+/* ---------------------------
    SUPPORT REQUEST SECTION
 ---------------------------- */
 .support-section {
@@ -289,6 +349,14 @@
 
     .support-card {
         padding: 2rem 1.5rem;
+    }
+
+    .community-impact .impact-heading {
+        font-size: 3.5rem;
+    }
+
+    .community-impact .impact-num {
+        font-size: 3rem;
     }
 }
 
