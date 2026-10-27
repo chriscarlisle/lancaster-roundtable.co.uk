@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /sleigh-beacon.html
+Disallow: /live-tracking/
+
+Sitemap: https://lancaster-roundtable.co.uk/sitemap.xml

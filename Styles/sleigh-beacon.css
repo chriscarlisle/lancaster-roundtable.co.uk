@@ -1,0 +1,107 @@
+.beacon-main {
+    min-height: calc(100svh - 90px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    background-color: var(--black);
+}
+
+.beacon-card {
+    background-color: var(--table-grey);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+}
+
+.beacon-card h1 {
+    font-size: 1.8rem;
+    margin: 0 0 1rem;
+}
+
+.beacon-intro {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0 0 1.75rem;
+}
+
+.beacon-status {
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.beacon-status-off {
+    background-color: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.6);
+}
+
+.beacon-status code {
+    color: var(--golden-yellow);
+}
+
+.beacon-label {
+    display: block;
+    text-align: left;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin: 0 0 0.5rem;
+}
+
+.beacon-input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.beacon-input:focus {
+    outline: none;
+    border-color: var(--golden-yellow);
+}
+
+.beacon-btn {
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+
+.beacon-pill {
+    display: inline-block;
+    font-family: 'Eurostile_Extended_Bold', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 1.3rem;
+    border-radius: 999px;
+    margin-bottom: 0.5rem;
+}
+
+.beacon-pill-off {
+    background-color: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.6);
+}
+
+.beacon-pill-live {
+    background-color: var(--golden-yellow);
+    color: var(--black);
+}
+
+.beacon-pill-error {
+    background-color: #D31C1C;
+    color: var(--white);
+}
+
+.beacon-detail {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+}

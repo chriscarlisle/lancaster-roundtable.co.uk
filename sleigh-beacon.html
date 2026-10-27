@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Sleigh Beacon | Lancaster Round Table</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="images/RTLogos/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/RTLogos/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/layout.css">
+    <link rel="stylesheet" href="Styles/sleigh-beacon.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="nav-container container">
+        <a href="index.html" class="logo-link">
+            <img src="images/RTLogos/Header.png" alt="Site Logo" class="logo">
+        </a>
+    </div>
+</header>
+
+<main class="beacon-main">
+    <div class="beacon-card">
+        <h1>Sleigh Beacon</h1>
+        <p class="beacon-intro">This phone becomes the sleigh's live position for tonight's route. Keep this screen on and this tab in the foreground the whole time you're out — mobile browsers pause GPS the moment it's backgrounded.</p>
+
+        <div id="beacon-not-configured" class="beacon-status beacon-status-off">
+            Live tracking isn't set up yet — see <code>live-tracking/README.md</code>.
+        </div>
+
+        <div id="beacon-controls" hidden>
+            <label class="beacon-label" for="beacon-secret">Beacon password</label>
+            <input type="password" id="beacon-secret" class="beacon-input" autocomplete="off" placeholder="Ask your Lead Elf">
+
+            <button type="button" id="beacon-start" class="btn btn-primary beacon-btn">Start Transmitting</button>
+            <button type="button" id="beacon-stop" class="btn btn-secondary beacon-btn" hidden>Stop</button>
+
+            <div id="beacon-pill" class="beacon-pill beacon-pill-off">OFF</div>
+            <p id="beacon-detail" class="beacon-detail"></p>
+        </div>
+    </div>
+</main>
+
+<script>
+    // Set this once live tracking is deployed — see live-tracking/README.md
+    // The password itself is never stored here: Firebase's own security rule
+    // (see live-tracking/README.md step 1.4) is what actually checks it,
+    // server-side. Keeping it out of this file means view-source never
+    // reveals it.
+    const BEACON_CONFIG = {
+        firebaseUrl: 'https://lancastersantatracking-default-rtdb.europe-west1.firebasedatabase.app',
+    };
+
+    const notConfiguredEl = document.getElementById('beacon-not-configured');
+    const controlsEl = document.getElementById('beacon-controls');
+    const secretInput = document.getElementById('beacon-secret');
+    const startBtn = document.getElementById('beacon-start');
+    const stopBtn = document.getElementById('beacon-stop');
+    const pillEl = document.getElementById('beacon-pill');
+    const detailEl = document.getElementById('beacon-detail');
+
+    if (BEACON_CONFIG.firebaseUrl) {
+        notConfiguredEl.hidden = true;
+        controlsEl.hidden = false;
+    }
+
+    let watchId = null;
+
+    function setPill(state, text) {
+        pillEl.className = 'beacon-pill beacon-pill-' + state;
+        pillEl.textContent = text;
+    }
+
+    async function sendPosition(position) {
+        const { latitude, longitude } = position.coords;
+        const secret = secretInput.value.trim();
+        const url = `${BEACON_CONFIG.firebaseUrl}/location/current/${encodeURIComponent(secret)}.json`;
+        try {
+            const res = await fetch(url, {
+                method: 'PUT',
+                body: JSON.stringify({ lat: latitude, lng: longitude, ts: Date.now() })
+            });
+            if (res.status === 401 || res.status === 403) {
+                // Firebase's own rule rejected the secret — stop retrying with a bad password.
+                if (watchId !== null) navigator.geolocation.clearWatch(watchId);
+                watchId = null;
+                setPill('error', 'ERROR');
+                detailEl.textContent = 'Wrong password — check with your Lead Elf.';
+                startBtn.hidden = false;
+                stopBtn.hidden = true;
+                secretInput.disabled = false;
+                return;
+            }
+            if (!res.ok) throw new Error('write failed');
+            setPill('live', 'LIVE');
+            detailEl.textContent = `Last sent ${new Date().toLocaleTimeString()}`;
+        } catch (e) {
+            setPill('error', 'ERROR');
+            detailEl.textContent = 'Could not reach the server — check your connection.';
+        }
+    }
+
+    function handleGeoError(err) {
+        setPill('error', 'ERROR');
+        detailEl.textContent = err.message || 'Location error';
+    }
+
+    startBtn.addEventListener('click', () => {
+        if (!secretInput.value.trim()) {
+            detailEl.textContent = 'Enter the beacon password first.';
+            return;
+        }
+        if (!navigator.geolocation) {
+            detailEl.textContent = 'This browser does not support location.';
+            return;
+        }
+        watchId = navigator.geolocation.watchPosition(sendPosition, handleGeoError, {
+            enableHighAccuracy: true,
+            maximumAge: 5000,
+            timeout: 15000
+        });
+        setPill('live', 'STARTING…');
+        startBtn.hidden = true;
+        stopBtn.hidden = false;
+        secretInput.disabled = true;
+    });
+
+    stopBtn.addEventListener('click', () => {
+        if (watchId !== null) navigator.geolocation.clearWatch(watchId);
+        watchId = null;
+        setPill('off', 'OFF');
+        detailEl.textContent = '';
+        startBtn.hidden = false;
+        stopBtn.hidden = true;
+        secretInput.disabled = false;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2397a386-57da-432d-b1d3-006ae0ca18aa" name="Changes" comment="Clean up and optimize image assets: remove unused Tabler images, update SleighSupport and Area34 visuals, and add new favicon.">
+      <change afterPath="$PROJECT_DIR$/images/RTLogos/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Tablers/Silhouette.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Styles/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/Styles/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Styles/community.css" beforeDir="false" afterPath="$PROJECT_DIR$/Styles/community.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Styles/contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/Styles/contact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Styles/santas-sleigh.css" beforeDir="false" afterPath="$PROJECT_DIR$/Styles/santas-sleigh.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Styles/tabler.css" beforeDir="false" afterPath="$PROJECT_DIR$/Styles/tabler.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/area34.html" beforeDir="false" afterPath="$PROJECT_DIR$/area34.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/community.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighPhotos/2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighPhotos/2.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/CTDesigns.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/CTDesigns.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/CarnforthRotary.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/CarnforthRotary.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/CarnforthScouts.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/CarnforthScouts.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/GalgateScouts.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/GalgateScouts.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/Inner Wheel.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/Inner Wheel.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/JoinersArms.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/JoinersArms.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/LancasterSigns.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/LancasterSigns.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/LonsdaleScouts.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/LonsdaleScouts.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/OKPTA.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/OKPTA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/Rangers.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/Rangers.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/Rogerson.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/Rogerson.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/SleighSupport/SendDen.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/SleighSupport/SendDen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/Blake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/Chris.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/EthanC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/EthanG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/Jason.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/Lewis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/Luke.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/Markus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/Mitch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/Sal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tablers/Simon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/area34/Area34.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/area34/Area34.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/area34/Blackburn.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/area34/Blackburn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/area34/Clitheroe.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/area34/Clitheroe.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/area34/LancasterRTLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/area34/LancasterRTLogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/area34/Lytham.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/area34/Lytham.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/photos/2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/images/photos/2.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/photos/3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/images/photos/3.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/photos/4.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/images/photos/4.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/santas-sleigh.html" beforeDir="false" afterPath="$PROJECT_DIR$/santas-sleigh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablers.html" beforeDir="false" afterPath="$PROJECT_DIR$/tablers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thank-you.html" beforeDir="false" afterPath="$PROJECT_DIR$/thank-you.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="95" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ec-sudo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/chriscarlisle/lancaster-roundtable.co.uk.git&quot;,
+    &quot;accountId&quot;: &quot;7c6694fb-ed3d-46d8-a724-ffd76d629c92&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3IB0serCEEKiJEkpFTHk8JgWANa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.santas-sleigh.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.sleigh-beacon.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ethanclayton/PycharmProjects/lancaster-roundtable.co.uk/images/SleighMaps&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images/SleighMaps" />
+      <recent name="$PROJECT_DIR$/images/Tablers" />
+      <recent name="$PROJECT_DIR$/images/RTLogos" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-821f704e66d9-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.9437.214" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2397a386-57da-432d-b1d3-006ae0ca18aa" name="Changes" comment="" />
+      <created>1787222863033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1787222863033</updated>
+      <workItem from="1787222864040" duration="83000" />
+      <workItem from="1789064871069" duration="6578000" />
+      <workItem from="1789245885308" duration="3865000" />
+      <workItem from="1789252318072" duration="143000" />
+      <workItem from="1789326848084" duration="600000" />
+      <workItem from="1789502921427" duration="3268000" />
+      <workItem from="1789838299592" duration="4932000" />
+      <workItem from="1789913291402" duration="575000" />
+      <workItem from="1790109207709" duration="1807000" />
+      <workItem from="1790696708787" duration="953000" />
+      <workItem from="1790701907326" duration="204000" />
+      <workItem from="1793096259108" duration="3634000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Clean up and optimize image assets: remove unused Tabler images, update SleighSupport and Area34 visuals, and add new favicon." />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean up and optimize image assets: remove unused Tabler images, update SleighSupport and Area34 visuals, and add new favicon." />
+  </component>
+</project>
