@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2397a386-57da-432d-b1d3-006ae0ca18aa" name="Changes" comment="Update font-weight range for Eurostile_Extended_Bold in base.css" />
+    <list default="true" id="2397a386-57da-432d-b1d3-006ae0ca18aa" name="Changes" comment="Update font-weight range for Eurostile_Extended_Bold in base.css">
+      <change beforePath="$PROJECT_DIR$/tablers.html" beforeDir="false" afterPath="$PROJECT_DIR$/tablers.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +98,7 @@
       <workItem from="1790696708787" duration="953000" />
       <workItem from="1790701907326" duration="204000" />
       <workItem from="1793096259108" duration="3634000" />
-      <workItem from="1793112431324" duration="355000" />
+      <workItem from="1793112431324" duration="441000" />
     </task>
     <task id="LOCAL-00001" summary="Clean up and optimize image assets: remove unused Tabler images, update SleighSupport and Area34 visuals, and add new favicon.">
       <option name="closed" value="true" />
@@ -122,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793112781760</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update font-weight range for Eurostile_Extended_Bold in base.css">
+      <option name="closed" value="true" />
+      <created>1793112841113</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1793112841113</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
