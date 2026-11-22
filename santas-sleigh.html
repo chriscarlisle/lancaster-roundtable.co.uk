@@ -139,6 +139,14 @@
             <div class="logo-item"><img src="images/SleighSupport/Rogerson.png" alt="Rogersons"></div>
             <div class="logo-item"><img src="images/SleighSupport/CTDesigns.png" alt="CT Designs"></div>
             <div class="logo-item"><img src="images/SleighSupport/JoinersArms.png" alt="Joiners Arms"></div>
+            <div class="logo-item"><a href="https://www.keersands.co.uk" target="_blank" rel="noopener" title="Visit Keer Sands Residential Home"><img src="images/SleighSupport/RouteSponsors/KeerSands.png" alt="Keer Sands Residential Home"></a></div>
+            <div class="logo-item"><a href="https://www.oldschoolbrewery.co.uk" target="_blank" rel="noopener" title="Visit Old School Brewery"><img src="images/SleighSupport/RouteSponsors/OldSchoolBrewery.png" alt="Old School Brewery"></a></div>
+            <div class="logo-item"><a href="https://fellsidepropertyrentals.co.uk" target="_blank" rel="noopener" title="Visit Fellside Property Rentals Ltd"><img src="images/SleighSupport/RouteSponsors/Fellside.png" alt="Fellside Property Rentals Ltd"></a></div>
+            <div class="logo-item"><a href="https://www.wrightandlord.com" target="_blank" rel="noopener" title="Visit Wright and Lord Solicitors"><img src="images/SleighSupport/RouteSponsors/WrightAndLord.png" alt="Wright and Lord Solicitors"></a></div>
+            <div class="logo-item"><a href="https://www.facebook.com/harrysbarmorecambe/?locale=en_GB" target="_blank" rel="noopener" title="Visit Harry's Brunch Bar"><img src="images/SleighSupport/RouteSponsors/Harrys.png" alt="Harry's Brunch Bar"></a></div>
+            <div class="logo-item"><a href="https://morecambebay.foodbank.org.uk" target="_blank" rel="noopener" title="Visit Morecambe Bay Food Bank"><img src="images/SleighSupport/RouteSponsors/MorecambeBayFoodbank.png" alt="Morecambe Bay Food Bank"></a></div>
+            <div class="logo-item"><a href="https://www.edfenergy.com" target="_blank" rel="noopener" title="Visit EDF"><img src="images/SleighSupport/RouteSponsors/EDF.png" alt="EDF"></a></div>
+            <div class="logo-item"><a href="https://marshcommunitycentre.org" target="_blank" rel="noopener" title="Visit Marsh Community Centre"><img src="images/SleighSupport/RouteSponsors/MCC.png" alt="Marsh Community Centre"></a></div>
         </div>
     </div>
 </section>
@@ -419,9 +427,10 @@
         { id: 'bolton-le-sands-north', name: 'Bolton-le-Sands North', date: '10th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/bolton-le-sands-north.gpx' },
         { id: 'caton', name: 'Caton', date: '12th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/caton.gpx' },
         { id: 'halton', name: 'Halton', date: '15th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/halton.gpx' },
-        { id: 'heysham', name: 'Heysham', date: '16th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/heysham.gpx' },
+        { id: 'heysham', name: 'Mossgate (Heysham)', date: '16th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/heysham.gpx' },
         { id: 'morecambe-fc', name: 'Morecambe FC (Static)', date: '19th December 2026', time: 'Time TBC', point: [54.0611, -2.8672] }, // just in front of the Mazuma Stadium, Christie Way
-        { id: 'hest-bank', name: 'Hest Bank', date: '20th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/hest-bank.gpx' },
+        { id: 'hest-bank', name: 'Slyne and Hest Bank', date: '20th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/hest-bank.gpx' },
+        { id: 'marsh', name: 'Marsh', date: '21st December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/marsh.gpx' },
     ];
 
     const routeTabButtons = {}; // populated by initRoutePicker: route id -> tab button element
@@ -725,24 +734,33 @@
     const PLACEHOLDER_SPONSOR = { name: 'Lancaster Round Table', logo: 'images/RTLogos/LancasterRTLogo.png', url: 'https://www.facebook.com/Lancaster160/', isPlaceholder: true };
 
     const ROUTE_SCHEDULE = [
-        { id: 'bolton-le-sands-south', name: 'Bolton-le-Sands South', date: '2nd December 2026', dateISO: '2026-12-02', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'bolton-le-sands-south', name: 'Bolton-le-Sands South', date: '2nd December 2026', dateISO: '2026-12-02', time: 'Time TBC',
+            sponsor: { name: 'Keer Sands Residential Home', logo: 'images/SleighSupport/RouteSponsors/KeerSands.png', url: 'https://www.keersands.co.uk' } },
         { id: 'silverdale', name: 'Silverdale', date: '4th December 2026', dateISO: '2026-12-04', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
-        { id: 'quernmore-road-estates', name: 'Quernmore Road Estates (Lancaster)', date: '6th December 2026', dateISO: '2026-12-06', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
-        { id: 'warton', name: 'Warton', date: '7th December 2026', dateISO: '2026-12-07', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
-        { id: 'carnforth', name: 'Carnforth', date: '9th December 2026', dateISO: '2026-12-09', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
-        { id: 'bolton-le-sands-north', name: 'Bolton-le-Sands North', date: '10th December 2026', dateISO: '2026-12-10', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'quernmore-road-estates', name: 'Quernmore Road Estates (Lancaster)', date: '6th December 2026', dateISO: '2026-12-06', time: 'Time TBC',
+            sponsor: { name: 'Lancaster Signs', logo: 'images/SleighSupport/LancasterSigns.png' } },
+        { id: 'warton', name: 'Warton', date: '7th December 2026', dateISO: '2026-12-07', time: 'Time TBC',
+            sponsor: { name: 'Old School Brewery', logo: 'images/SleighSupport/RouteSponsors/OldSchoolBrewery.png', url: 'https://www.oldschoolbrewery.co.uk' } },
+        { id: 'carnforth', name: 'Carnforth', date: '9th December 2026', dateISO: '2026-12-09', time: 'Time TBC',
+            sponsor: { name: 'Fellside Property Rentals Ltd', logo: 'images/SleighSupport/RouteSponsors/Fellside.png', url: 'https://fellsidepropertyrentals.co.uk' } },
+        { id: 'bolton-le-sands-north', name: 'Bolton-le-Sands North', date: '10th December 2026', dateISO: '2026-12-10', time: 'Time TBC',
+            sponsor: { name: 'Wright and Lord Solicitors', logo: 'images/SleighSupport/RouteSponsors/WrightAndLord.png', url: 'https://www.wrightandlord.com' } },
         { id: 'caton', name: 'Caton', date: '12th December 2026', dateISO: '2026-12-12', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
         { id: 'halton', name: 'Halton', date: '15th December 2026', dateISO: '2026-12-15', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
-        { id: 'heysham', name: 'Heysham', date: '16th December 2026', dateISO: '2026-12-16', time: 'Time TBC',
+        { id: 'heysham', name: 'Mossgate (Heysham)', date: '16th December 2026', dateISO: '2026-12-16', time: 'Time TBC',
             sponsor: { name: "Harry's Brunch Bar", logo: 'images/SleighSupport/RouteSponsors/Harrys.png',
                        url: 'https://www.facebook.com/harrysbarmorecambe/?locale=en_GB' } },
-        { id: 'morecambe-fc', name: 'Morecambe FC (Static)', date: '19th December 2026', dateISO: '2026-12-19', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
-        { id: 'hest-bank', name: 'Hest Bank', date: '20th December 2026', dateISO: '2026-12-20', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'morecambe-fc', name: 'Morecambe FC (Static)', date: '19th December 2026', dateISO: '2026-12-19', time: 'Time TBC',
+            sponsor: { name: 'Morecambe Bay Food Bank', logo: 'images/SleighSupport/RouteSponsors/MorecambeBayFoodbank.png', relation: 'In association with',
+                       url: 'https://morecambebay.foodbank.org.uk' } },
+        { id: 'hest-bank', name: 'Slyne and Hest Bank', date: '20th December 2026', dateISO: '2026-12-20', time: 'Time TBC',
+            sponsor: { name: 'EDF', logo: 'images/SleighSupport/RouteSponsors/EDF.png', url: 'https://www.edfenergy.com' } },
         {
-            id: 'give-back-community-day', name: 'Give Back Community Day', date: '21st December 2026',
+            id: 'marsh', name: 'Give Back Community Day (Marsh)', date: '21st December 2026', dateISO: '2026-12-21',
             isBidding: true,
+            sponsor: { name: 'Marsh Community Centre', logo: 'images/SleighSupport/RouteSponsors/MCC.png', url: 'https://marshcommunitycentre.org' },
             bidFormUrl: null, // e.g. a Google Form link — falls back to a mailto enquiry until set
-            winningBid: null  // once decided: { sponsorName: 'Acme Ltd', details: 'What they won and why' }
+            winningBid: { sponsorName: 'Marsh Community Centre' }
         },
     ];
 
@@ -761,7 +779,7 @@
             const sponsorLine = sponsor && sponsor.isPlaceholder
                 ? 'Sponsorship available'
                 : sponsor && sponsor.name
-                    ? `Sponsored by ${sponsorLinkOpen}${sponsor.name}${sponsorLinkClose}`
+                    ? `${sponsor.relation || 'Sponsored by'} ${sponsorLinkOpen}${sponsor.name}${sponsorLinkClose}`
                     : 'Sponsor to be announced';
 
             let actionHtml;
