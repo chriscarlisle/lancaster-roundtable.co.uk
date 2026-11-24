@@ -147,6 +147,7 @@
             <div class="logo-item"><a href="https://morecambebay.foodbank.org.uk" target="_blank" rel="noopener" title="Visit Morecambe Bay Food Bank"><img src="images/SleighSupport/RouteSponsors/MorecambeBayFoodbank.png" alt="Morecambe Bay Food Bank"></a></div>
             <div class="logo-item"><a href="https://www.edfenergy.com" target="_blank" rel="noopener" title="Visit EDF"><img src="images/SleighSupport/RouteSponsors/EDF.png" alt="EDF"></a></div>
             <div class="logo-item"><a href="https://marshcommunitycentre.org" target="_blank" rel="noopener" title="Visit Marsh Community Centre"><img src="images/SleighSupport/RouteSponsors/MCC.png" alt="Marsh Community Centre"></a></div>
+            <div class="logo-item"><a href="https://westfieldmemorialvillage.co.uk" target="_blank" rel="noopener" title="Visit Westfield War Memorial Village"><img src="images/SleighSupport/RouteSponsors/Westfield.png" alt="Westfield War Memorial Village"></a></div>
         </div>
     </div>
 </section>
@@ -419,18 +420,18 @@
     // of `gpx`) drops a single static pin rather than a line — used for
     // Morecambe FC, which isn't a moving route.
     const SLEIGH_ROUTES = [
-        { id: 'bolton-le-sands-south', name: 'Bolton-le-Sands South', date: '2nd December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/bolton-le-sands-south.gpx' },
-        { id: 'silverdale', name: 'Silverdale', date: '4th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/silverdale.gpx' },
-        { id: 'quernmore-road-estates', name: 'Quernmore Road Estates (Lancaster)', date: '6th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/quernmore-road-estates.gpx' },
-        { id: 'warton', name: 'Warton', date: '7th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/warton.gpx' },
-        { id: 'carnforth', name: 'Carnforth', date: '9th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/carnforth.gpx' },
-        { id: 'bolton-le-sands-north', name: 'Bolton-le-Sands North', date: '10th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/bolton-le-sands-north.gpx' },
-        { id: 'caton', name: 'Caton', date: '12th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/caton.gpx' },
-        { id: 'halton', name: 'Halton', date: '15th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/halton.gpx' },
-        { id: 'heysham', name: 'Mossgate (Heysham)', date: '16th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/heysham.gpx' },
-        { id: 'morecambe-fc', name: 'Morecambe FC (Static)', date: '19th December 2026', time: 'Time TBC', point: [54.0611, -2.8672] }, // just in front of the Mazuma Stadium, Christie Way
-        { id: 'hest-bank', name: 'Slyne and Hest Bank', date: '20th December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/hest-bank.gpx' },
-        { id: 'marsh', name: 'Marsh', date: '21st December 2026', time: 'Time TBC', gpx: 'images/SleighMaps/routes/marsh.gpx' },
+        { id: 'bolton-le-sands-south', name: 'Bolton-le-Sands South', date: '2nd December 2026', time: '5:30pm', gpx: 'images/SleighMaps/routes/bolton-le-sands-south.gpx' },
+        { id: 'silverdale', name: 'Silverdale', date: '4th December 2026', time: '5:30pm', gpx: 'images/SleighMaps/routes/silverdale.gpx' },
+        { id: 'quernmore-road-estates', name: 'Quernmore Road Estates (Lancaster)', date: '6th December 2026', time: '4:00pm', gpx: 'images/SleighMaps/routes/quernmore-road-estates.gpx' },
+        { id: 'warton', name: 'Warton', date: '7th December 2026', time: '5:30pm', gpx: 'images/SleighMaps/routes/warton.gpx' },
+        { id: 'carnforth', name: 'Carnforth', date: '9th December 2026', time: 'Meets 5:00pm–5:20pm at Crag Bank Village Hall, then sets off on route', gpx: 'images/SleighMaps/routes/carnforth.gpx' },
+        { id: 'bolton-le-sands-north', name: 'Bolton-le-Sands North', date: '10th December 2026', time: '5:30pm', gpx: 'images/SleighMaps/routes/bolton-le-sands-north.gpx' },
+        { id: 'caton', name: 'Caton and Brookhouse', date: '12th December 2026', time: '4:00pm', gpx: 'images/SleighMaps/routes/caton.gpx' },
+        { id: 'halton', name: 'Halton', date: '15th December 2026', time: '5:30pm', gpx: 'images/SleighMaps/routes/halton.gpx' },
+        { id: 'heysham', name: 'Mossgate (Heysham)', date: '16th December 2026', time: '5:30pm', gpx: 'images/SleighMaps/routes/heysham.gpx' },
+        { id: 'morecambe-fc', name: 'Morecambe FC (Static)', date: '19th December 2026', time: '1:30pm', point: [54.0611, -2.8672] }, // just in front of the Mazuma Stadium, Christie Way
+        { id: 'hest-bank', name: 'Slyne and Hest Bank', date: '20th December 2026', time: '4:00pm', gpx: 'images/SleighMaps/routes/hest-bank.gpx' },
+        { id: 'marsh', name: 'Marsh', date: '21st December 2026', time: 'Westfield from 5:30pm, Marsh from 7:00pm', gpx: 'images/SleighMaps/routes/marsh.gpx' },
     ];
 
     const routeTabButtons = {}; // populated by initRoutePicker: route id -> tab button element
@@ -734,33 +735,37 @@
     const PLACEHOLDER_SPONSOR = { name: 'Lancaster Round Table', logo: 'images/RTLogos/LancasterRTLogo.png', url: 'https://www.facebook.com/Lancaster160/', isPlaceholder: true };
 
     const ROUTE_SCHEDULE = [
-        { id: 'bolton-le-sands-south', name: 'Bolton-le-Sands South', date: '2nd December 2026', dateISO: '2026-12-02', time: 'Time TBC',
+        { id: 'bolton-le-sands-south', name: 'Bolton-le-Sands South', date: '2nd December 2026', dateISO: '2026-12-02', time: '5:30pm',
             sponsor: { name: 'Keer Sands Residential Home', logo: 'images/SleighSupport/RouteSponsors/KeerSands.png', url: 'https://www.keersands.co.uk' } },
-        { id: 'silverdale', name: 'Silverdale', date: '4th December 2026', dateISO: '2026-12-04', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
-        { id: 'quernmore-road-estates', name: 'Quernmore Road Estates (Lancaster)', date: '6th December 2026', dateISO: '2026-12-06', time: 'Time TBC',
+        { id: 'silverdale', name: 'Silverdale', date: '4th December 2026', dateISO: '2026-12-04', time: '5:30pm', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'quernmore-road-estates', name: 'Quernmore Road Estates (Lancaster)', date: '6th December 2026', dateISO: '2026-12-06', time: '4:00pm',
             sponsor: { name: 'Lancaster Signs', logo: 'images/SleighSupport/LancasterSigns.png' } },
-        { id: 'warton', name: 'Warton', date: '7th December 2026', dateISO: '2026-12-07', time: 'Time TBC',
+        { id: 'warton', name: 'Warton', date: '7th December 2026', dateISO: '2026-12-07', time: '5:30pm',
             sponsor: { name: 'Old School Brewery', logo: 'images/SleighSupport/RouteSponsors/OldSchoolBrewery.png', url: 'https://www.oldschoolbrewery.co.uk' } },
-        { id: 'carnforth', name: 'Carnforth', date: '9th December 2026', dateISO: '2026-12-09', time: 'Time TBC',
+        { id: 'carnforth', name: 'Carnforth', date: '9th December 2026', dateISO: '2026-12-09', time: 'Meets 5:00pm–5:20pm at Crag Bank Village Hall, then sets off on route',
             sponsor: { name: 'Fellside Property Rentals Ltd', logo: 'images/SleighSupport/RouteSponsors/Fellside.png', url: 'https://fellsidepropertyrentals.co.uk' } },
-        { id: 'bolton-le-sands-north', name: 'Bolton-le-Sands North', date: '10th December 2026', dateISO: '2026-12-10', time: 'Time TBC',
+        { id: 'bolton-le-sands-north', name: 'Bolton-le-Sands North', date: '10th December 2026', dateISO: '2026-12-10', time: '5:30pm',
             sponsor: { name: 'Wright and Lord Solicitors', logo: 'images/SleighSupport/RouteSponsors/WrightAndLord.png', url: 'https://www.wrightandlord.com' } },
-        { id: 'caton', name: 'Caton', date: '12th December 2026', dateISO: '2026-12-12', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
-        { id: 'halton', name: 'Halton', date: '15th December 2026', dateISO: '2026-12-15', time: 'Time TBC', sponsor: PLACEHOLDER_SPONSOR },
-        { id: 'heysham', name: 'Mossgate (Heysham)', date: '16th December 2026', dateISO: '2026-12-16', time: 'Time TBC',
+        { id: 'caton', name: 'Caton and Brookhouse', date: '12th December 2026', dateISO: '2026-12-12', time: '4:00pm', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'halton', name: 'Halton', date: '15th December 2026', dateISO: '2026-12-15', time: '5:30pm', sponsor: PLACEHOLDER_SPONSOR },
+        { id: 'heysham', name: 'Mossgate (Heysham)', date: '16th December 2026', dateISO: '2026-12-16', time: '5:30pm',
             sponsor: { name: "Harry's Brunch Bar", logo: 'images/SleighSupport/RouteSponsors/Harrys.png',
                        url: 'https://www.facebook.com/harrysbarmorecambe/?locale=en_GB' } },
-        { id: 'morecambe-fc', name: 'Morecambe FC (Static)', date: '19th December 2026', dateISO: '2026-12-19', time: 'Time TBC',
+        { id: 'morecambe-fc', name: 'Morecambe FC (Static)', date: '19th December 2026', dateISO: '2026-12-19', time: '1:30pm',
             sponsor: { name: 'Morecambe Bay Food Bank', logo: 'images/SleighSupport/RouteSponsors/MorecambeBayFoodbank.png', relation: 'In association with',
                        url: 'https://morecambebay.foodbank.org.uk' } },
-        { id: 'hest-bank', name: 'Slyne and Hest Bank', date: '20th December 2026', dateISO: '2026-12-20', time: 'Time TBC',
+        { id: 'hest-bank', name: 'Slyne and Hest Bank', date: '20th December 2026', dateISO: '2026-12-20', time: '4:00pm',
             sponsor: { name: 'EDF', logo: 'images/SleighSupport/RouteSponsors/EDF.png', url: 'https://www.edfenergy.com' } },
         {
-            id: 'marsh', name: 'Give Back Community Day (Marsh)', date: '21st December 2026', dateISO: '2026-12-21',
+            id: 'marsh', name: 'Give Back Community Day (Marsh)', date: '21st December 2026', dateISO: '2026-12-21', time: 'Westfield from 5:30pm, Marsh from 7:00pm',
             isBidding: true,
-            sponsor: { name: 'Marsh Community Centre', logo: 'images/SleighSupport/RouteSponsors/MCC.png', url: 'https://marshcommunitycentre.org' },
+            // Two groups chose to split this slot and share it between them — see `sponsors` (plural) below.
+            sponsors: [
+                { name: 'Marsh Community Centre', logo: 'images/SleighSupport/RouteSponsors/MCC.png', url: 'https://marshcommunitycentre.org' },
+                { name: 'Westfield War Memorial Village', logo: 'images/SleighSupport/RouteSponsors/Westfield.png', url: 'https://westfieldmemorialvillage.co.uk' },
+            ],
             bidFormUrl: null, // e.g. a Google Form link — falls back to a mailto enquiry until set
-            winningBid: { sponsorName: 'Marsh Community Centre' }
+            winningBid: { sponsorName: 'Marsh Community Centre & Westfield War Memorial Village' }
         },
     ];
 
@@ -768,18 +773,30 @@
         const grid = document.getElementById('route-schedule-grid');
         if (!grid) return;
 
+        // A route is normally sponsored by one business (`sponsor`), but a slot can be split
+        // and shared between two or more (`sponsors`, plural) — see the Marsh entry above.
+        const logoHtml = s => {
+            const open = s.url ? `<a href="${s.url}" target="_blank" rel="noopener" title="Visit ${s.name}">` : '';
+            const close = s.url ? '</a>' : '';
+            return s.logo ? `<div class="route-sponsor-logo">${open}<img src="${s.logo}" alt="${s.name} logo">${close}</div>` : '';
+        };
+        const nameHtml = s => {
+            const open = s.url ? `<a href="${s.url}" target="_blank" rel="noopener" title="Visit ${s.name}">` : '';
+            const close = s.url ? '</a>' : '';
+            return `${open}${s.name}${close}`;
+        };
+
         grid.innerHTML = routes.map(route => {
             const sponsor = route.sponsor;
-            const sponsorLinkOpen = sponsor && sponsor.url ? `<a href="${sponsor.url}" target="_blank" rel="noopener" title="Visit ${sponsor.name}">` : '';
-            const sponsorLinkClose = sponsor && sponsor.url ? '</a>' : '';
+            const sponsorList = route.sponsors || (sponsor ? [sponsor] : []);
 
-            const sponsorLogo = sponsor && sponsor.logo
-                ? `<div class="route-sponsor-logo">${sponsorLinkOpen}<img src="${sponsor.logo}" alt="${sponsor.name} logo">${sponsorLinkClose}</div>`
-                : '';
+            const sponsorLogo = sponsorList.length > 1
+                ? `<div class="route-sponsor-logos">${sponsorList.map(logoHtml).join('')}</div>`
+                : sponsorList.length === 1 ? logoHtml(sponsorList[0]) : '';
             const sponsorLine = sponsor && sponsor.isPlaceholder
                 ? 'Sponsorship available'
-                : sponsor && sponsor.name
-                    ? `${sponsor.relation || 'Sponsored by'} ${sponsorLinkOpen}${sponsor.name}${sponsorLinkClose}`
+                : sponsorList.length
+                    ? `${(sponsor && sponsor.relation) || 'Sponsored by'} ${sponsorList.map(nameHtml).join(' &amp; ')}`
                     : 'Sponsor to be announced';
 
             let actionHtml;

@@ -503,6 +503,17 @@
     overflow: hidden;
 }
 
+.route-sponsor-logos {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.route-sponsor-logos .route-sponsor-logo {
+    width: 56px;
+    height: 56px;
+}
+
 .route-sponsor-logo img {
     width: 100%;
     height: 100%;
