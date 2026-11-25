@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleigh Volunteer Info | Lancaster Round Table</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="images/RTLogos/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/RTLogos/apple-touch-icon.png">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="8543ef25-5404-4796-aa72-9b1f2a790d1d"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/layout.css">
+    <link rel="stylesheet" href="Styles/santas-sleigh-volunteers.css">
+</head>
+<body>
+
+<!-- HEADER / NAV -->
+<header class="site-header">
+    <div class="nav-container container">
+        <a href="index.html" class="logo-link">
+            <img src="images/RTLogos/Header.png" alt="Site Logo" class="logo">
+        </a>
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span><span></span><span></span>
+        </div>
+        <nav class="main-nav" id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="community.html">Community</a>
+            <a href="tablers.html">Tablers</a>
+            <a href="santas-sleigh.html">Santa's Sleigh</a>
+            <a href="area34.html">Area 34</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="volunteer-hero">
+    <div class="container volunteer-content">
+        <p class="sleigh-label">SANTA'S SLEIGH 2026</p>
+        <h1>Thanks for Volunteering<span class="text-gold">Everything You Need To Know</span></h1>
+        <p class="volunteer-intro">Have a watch below, then please fill in the form so we've got your details on file — including emergency contact info — before the big night.</p>
+
+        <div class="volunteer-video-wrap">
+            <video controls preload="metadata" playsinline>
+                <source src="images/SleighVideos/volunteer-sleigh.mp4" type="video/mp4">
+                Your browser doesn't support embedded video — you can <a href="images/SleighVideos/volunteer-sleigh.mp4">download it here</a> instead.
+            </video>
+        </div>
+
+        <a href="https://forms.gle/Kjk35b49vUmTqxMw6" class="btn btn-primary volunteer-cta" target="_blank" rel="noopener">Complete Your Volunteer Form</a>
+        <p class="volunteer-footnote">Questions first? Email <a href="mailto:lancaster@roundtable.org.uk">lancaster@roundtable.org.uk</a></p>
+    </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner container">
+        <div class="footer-brand">
+            <img src="images/RTLogos/Header.png" alt="Lancaster Round Table" class="footer-logo">
+            <p>Ignite your social life. Do More.</p>
+        </div>
+        <div class="footer-contact">
+            <h2 class="footer-heading">Get in Touch</h2>
+            <p><a href="mailto:lancaster@roundtable.org.uk">lancaster@roundtable.org.uk</a></p>
+            <p><a href="https://wa.me/447587673518">07587 673518</a></p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Lancaster160/?locale=en_GB">
+                    <img src="images/icons/facebook-logo.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/lancasterroundtable/">
+                    <img src="images/icons/instagram-logo.svg" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Lancaster Round Table. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
+</script>
+
+</body>
+</html>

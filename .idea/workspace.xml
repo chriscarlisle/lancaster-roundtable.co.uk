@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2397a386-57da-432d-b1d3-006ae0ca18aa" name="Changes" comment="Add Marsh GPX route and update Sleigh Maps routes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2397a386-57da-432d-b1d3-006ae0ca18aa" name="Changes" comment="Update Sleigh route times and add Westfield sponsor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,6 +102,7 @@
       <workItem from="1793820527558" duration="728000" />
       <workItem from="1795284952708" duration="4461000" />
       <workItem from="1795477918456" duration="37000" />
+      <workItem from="1795534370317" duration="166000" />
     </task>
     <task id="LOCAL-00001" summary="Clean up and optimize image assets: remove unused Tabler images, update SleighSupport and Area34 visuals, and add new favicon.">
       <option name="closed" value="true" />
@@ -153,7 +152,23 @@
       <option name="project" value="LOCAL" />
       <updated>1795368709507</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update Sleigh route times and add Westfield sponsor">
+      <option name="closed" value="true" />
+      <created>1795534390536</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1795534390536</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update Sleigh route times and add Westfield sponsor">
+      <option name="closed" value="true" />
+      <created>1795534435879</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1795534435879</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +179,7 @@
     <MESSAGE value="Add new GPX route files for Bolton-le-Sands North and South" />
     <MESSAGE value="Update font-weight range for Eurostile_Extended_Bold in base.css" />
     <MESSAGE value="Add Marsh GPX route and update Sleigh Maps routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Marsh GPX route and update Sleigh Maps routes" />
+    <MESSAGE value="Update Sleigh route times and add Westfield sponsor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Sleigh route times and add Westfield sponsor" />
   </component>
 </project>
